@@ -1,0 +1,42 @@
+header{
+    background-color: #420C14;color:#ffffff;
+    padding: 50px;
+    font-size: 20pt;
+
+}
+body{
+    background-color: #EFF7CF;
+    color: #420C14;
+    font-family: Courier;
+    margin: 0px;
+}
+main{
+    li{
+        color:#9b002c;
+        font-style: italic;
+
+
+}
+    h2{
+        color: #22060B;
+        margin: 20px;
+        font-size: 20px;
+    }
+    h1{
+        color: #22060B;
+        margin: 30px;
+        font-size: 35px;
+    }
+}
+
+footer{
+    background-color: #420C14;
+    color:#ffffff;
+    padding: 50px;
+    font-size: 15pt; 
+    font-style: italic; 
+    text-align: right
+
+}
+
+
