@@ -14,9 +14,10 @@ main{
     li{
         color:#9b002c;
         font-style: italic;
+        font-weight: bold;
 
 
-}
+    }
     h2{
         color: #22060B;
         margin: 20px;
@@ -37,6 +38,11 @@ footer{
     font-style: italic; 
     text-align: right
 
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
 }
 
 
