@@ -7,9 +7,10 @@ header{
 }
 body{
     background-color: #efefef;
-    color: #121212
-    font-family: Courier;
+    color: #121212;
     margin: 0px;
+    font-family: Courier;
+
 }
 main{
     
@@ -32,7 +33,13 @@ main{
         margin: 0;
         font-size: 20px;
     }
-    
+    .nacalo{
+        line-height: 1.5;
+        text-indent: 2cm; /* отступ */
+        margin: 10px;
+        font-size: 20px;
+        padding: 20px;
+    }
 }
 
 
