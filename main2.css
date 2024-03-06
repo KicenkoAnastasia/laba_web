@@ -1,0 +1,56 @@
+header{
+    background-color: #121212;
+    ;color:#efefef;
+    padding: 50px;
+    font-size: 20pt;
+
+}
+body{
+    background-color: #efefef;
+    color: #121212
+    font-family: Courier;
+    margin: 0px;
+}
+main{
+    
+    h1{
+        line-height: 1.5;
+        text-align: justify;
+        margin: 20px 30px 10px 30px;
+        font-size: 40px;
+    }
+    
+    h2{
+        line-height: 1.5;
+        text-align: justify;
+        margin: 10px 20px 5px 20px;  /* верхнее, правое, нижнее, левое */
+    }
+
+    p{
+        line-height: 1.5;
+        text-indent: 2cm; /* отступ */
+        margin: 0;
+        font-size: 20px;
+    }
+    
+}
+
+
+
+footer{
+    background-color: #121212;
+    color:#ffffff;
+    padding: 50px;
+    font-size: 15pt; 
+    font-style: italic; 
+    text-align: right
+
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15pt;
+}
+
+
