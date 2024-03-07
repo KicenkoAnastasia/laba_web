@@ -1,6 +1,6 @@
 header{
     background-color: #121212;
-    ;color:#efefef;
+    color:#efefef;
     padding: 50px;
     font-size: 20pt;
 
@@ -8,30 +8,34 @@ header{
 body{
     background-color: #efefef;
     color: #121212;
-    margin: 0px;
     font-family: Courier;
+    margin: 0;
+    
 
 }
 main{
+    width: 100vw; /* ширина равная ширине экрана */
+    overflow: hidden; /* отключаем прокрутку */
+    padding: 0;
+     margin: 0;
+    
     
     h1{
         line-height: 1.5;
-        text-align: justify;
-        margin: 20px 30px 10px 30px;
-        font-size: 40px;
-    }
-    
-    h2{
-        line-height: 1.5;
-        text-align: justify;
-        margin: 10px 20px 5px 20px;  /* верхнее, правое, нижнее, левое */
+        text-align: center;
+        margin: 10px;/* верхнее, правое, нижнее, левое */
+        font-size: 30px;
+        
     }
 
     p{
         line-height: 1.5;
         text-indent: 2cm; /* отступ */
-        margin: 0;
+        margin: 0px;
         font-size: 20px;
+        text-align: justify; 
+        padding: 10px;
+        
     }
     .nacalo{
         line-height: 1.5;
@@ -39,6 +43,19 @@ main{
         margin: 10px;
         font-size: 20px;
         padding: 20px;
+    }
+    .levo{
+        text-align: left;
+        width: 100%; /* растягиваем по ширине */
+        line-height: 1.5;
+        text-indent: 2cm; /* отступ */
+        margin: 10px;
+        font-size: 20px;
+        padding: 40px;
+    }
+
+    .teni{
+        text-shadow: 4px 3px 6px rgba(92, 92, 92, 0.5)
     }
 }
 
