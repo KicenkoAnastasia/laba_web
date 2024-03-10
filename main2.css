@@ -1,12 +1,13 @@
 header{
     background-color: #121212;
-    color:#efefef;
+    color:#fefefe;
     padding: 50px;
     font-size: 20pt;
+    padding: 20px;
 
 }
 body{
-    background-color: #efefef;
+    background-color: #fefefe;
     color: #121212;
     font-family: Courier;
     margin: 0;
@@ -14,49 +15,51 @@ body{
 
 }
 main{
-    width: 100vw; /* ширина равная ширине экрана */
+    /* width: 100vw; ширина равная ширине экрана */
     overflow: hidden; /* отключаем прокрутку */
-    padding: 0;
-     margin: 0;
+    padding: 20px;
+    margin: 0;
     
     
     h1{
-        line-height: 1.5;
         text-align: center;
-        margin: 10px;/* верхнее, правое, нижнее, левое */
-        font-size: 30px;
-        
+        /* margin:0; верхнее, правое, нижнее, левое */
+        font-size: 25px;
+        /* margin-bottom: 4px; */
+        margin-bottom: 10px; 
+    
     }
 
     p{
-        line-height: 1.5;
-        text-indent: 2cm; /* отступ */
-        margin: 0px;
+        /* line-height: 1.5; */
+        text-indent: 2cm;  /* отступ */
+        /* margin: 0px; */
         font-size: 20px;
         text-align: justify; 
-        padding: 10px;
+        padding: 70px;
+        margin-top: 10px;
+        
         
     }
     .nacalo{
-        line-height: 1.5;
-        text-indent: 2cm; /* отступ */
+        /* line-height: 1.5; */
+        /* text-indent: 2cm; отступ */
         margin: 10px;
         font-size: 20px;
-        padding: 20px;
+        padding: 70px;
     }
     .levo{
-        text-align: left;
-        width: 100%; /* растягиваем по ширине */
-        line-height: 1.5;
-        text-indent: 2cm; /* отступ */
+        text-align:justify;
+        /* width: 100%; растягиваем по ширине */
         margin: 10px;
         font-size: 20px;
-        padding: 40px;
+        padding: 70px;
     }
 
     .teni{
-        text-shadow: 4px 3px 6px rgba(92, 92, 92, 0.5)
+        text-shadow: 4px 3px 6px rgba(166, 166, 166, 0.5)
     }
+
 }
 
 
