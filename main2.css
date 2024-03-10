@@ -4,6 +4,7 @@ header{
     padding: 50px;
     font-size: 20pt;
     padding: 20px;
+    
 
 }
 body{
@@ -20,7 +21,7 @@ main{
     padding: 20px;
     margin: 0;
     
-    
+     
     h1{
         text-align: center;
         /* margin:0; верхнее, правое, нижнее, левое */
@@ -76,8 +77,10 @@ footer{
 
 a {
     text-decoration: none;
-    font-weight: bold;
+    font-style: italic;
     font-size: 15pt;
+    padding: 3px;
+   
 }
 
 
