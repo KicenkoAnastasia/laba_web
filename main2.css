@@ -1,86 +1,95 @@
 header{
-    background-color: #121212;
+    background-color: #0f0f0f;
     color:#fefefe;
     padding: 50px;
     font-size: 20pt;
     padding: 20px;
     
+    a{
+        text-decoration: none;
+    }
+    
 
 }
 body{
-    background-color: #fefefe;
-    color: #121212;
-    font-family: Courier;
+    background-color: #fffafa;
+    color: #0f0f0f;
+    font-family:'Yanone Kaffeesatz', sans-serif;
     margin: 0;
-    
-
 }
+
 main{
-    /* width: 100vw; ширина равная ширине экрана */
-    overflow: hidden; /* отключаем прокрутку */
     padding: 20px;
     margin: 0;
-    
-     
-    h1{
+
+
+        li{
+            font-size: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: #0f0f0f
+        }
+        h1{
         text-align: center;
         /* margin:0; верхнее, правое, нижнее, левое */
-        font-size: 25px;
+        font-size: 30px;
         /* margin-bottom: 4px; */
         margin-bottom: 10px; 
-    
     }
 
     p{
-        /* line-height: 1.5; */
         text-indent: 2cm;  /* отступ */
-        /* margin: 0px; */
-        font-size: 20px;
+        font-size: 25px;
         text-align: justify; 
-        padding: 70px;
-        margin-top: 10px;
-        
-        
+        padding: 30px;
+        margin-top: 0px;
+        padding-left: 200px;
+        padding-right: 200px;
     }
+
+
     .nacalo{
-        /* line-height: 1.5; */
-        /* text-indent: 2cm; отступ */
         margin: 10px;
-        font-size: 20px;
+        font-size: 25px;
         padding: 70px;
     }
     .levo{
         text-align:justify;
-        /* width: 100%; растягиваем по ширине */
         margin: 10px;
-        font-size: 20px;
+        font-size: 25px;
         padding: 70px;
     }
 
     .teni{
         text-shadow: 4px 3px 6px rgba(166, 166, 166, 0.5)
     }
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+     }
+
+     .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+        padding-bottom: 50px; /*растояние до заголовка */
+      }
+    
+    .foto{
+        text-align: center;
+    }
 
 }
-
-
-
 footer{
-    background-color: #121212;
+    background-color: #0f0f0f;
     color:#ffffff;
     padding: 50px;
     font-size: 15pt; 
     font-style: italic; 
-    text-align: right
-
+    text-align: right;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
-
-a {
-    text-decoration: none;
-    font-style: italic;
-    font-size: 15pt;
-    padding: 3px;
-   
-}
-
-
