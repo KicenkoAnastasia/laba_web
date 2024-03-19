@@ -19,14 +19,14 @@ main{
     }
     h1{
         line-height: 1.5;
-        text-align: justify;
+        text-align: center;
         margin: 20px 30px 10px 30px;
         font-size: 40px;
     }
     
     h2{
         line-height: 1.5;
-        text-align: justify;
+        text-align: center;
         margin: 10px 20px 5px 20px;  /* верхнее, правое, нижнее, левое */
     }
 
