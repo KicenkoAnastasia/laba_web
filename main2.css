@@ -7,9 +7,8 @@ header{
     
     a{
         text-decoration: none;
+        color: #fefefe;
     }
-    
-
 }
 body{
     background-color: #fffafa;
@@ -21,15 +20,15 @@ body{
 main{
     padding: 20px;
     margin: 0;
-
-
         li{
-            font-size: 20px;
+            font-size: 30px;
         }
         a{
             text-decoration: none;
-            color: #0f0f0f
+            color: #000000;
+            font-size: 20px;
         }
+    
         h1{
         text-align: center;
         /* margin:0; верхнее, правое, нижнее, левое */
@@ -37,18 +36,15 @@ main{
         /* margin-bottom: 4px; */
         margin-bottom: 10px; 
     }
-
     p{
         text-indent: 2cm;  /* отступ */
         font-size: 25px;
         text-align: justify; 
-        padding: 30px;
-        margin-top: 0px;
+        /* padding: 30px; */
         padding-left: 200px;
         padding-right: 200px;
+        padding-top: 2px;
     }
-
-
     .nacalo{
         margin: 10px;
         font-size: 25px;
@@ -92,4 +88,5 @@ footer{
     text-align: right;
     padding-top: 30px;
     padding-bottom: 30px;
+
 }
