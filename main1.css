@@ -35,6 +35,9 @@ main{
         text-indent: 2cm; /* отступ */
         margin: 0;
         font-size: 20px;
+        
+        text-align: justify;
+        padding: 30px;
     }
     .source{
         text-align: right;
