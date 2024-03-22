@@ -20,7 +20,16 @@ body{
 
 main{
     padding: 20px;
-    margin: 100px;    
+    margin: 100px;   
+    
+    a{
+        color: #fefefe;
+        text-decoration: none;
+    }
+    a:hover{
+        color: bisque;
+        text-decoration: solid;
+    }
 }
 footer{
     background-color: #000000;
