@@ -43,6 +43,27 @@ a {
     text-decoration: none;
     font-weight: bold;
     font-size: 15pt;
+    color: rgb(16, 112, 112);
 }
 
+
+
+a:link{
+    color:rgb(243, 103, 103);
+}
+a:visited{
+    color:rgb(85, 85, 85);
+}
+a:hover{
+    color: rgb(142, 11, 11);
+    text-decoration:solid;
+}
+
+a:active{
+    color:#fefff8;
+    background-color:#420C14;
+    color: #ffffff;
+    padding: 3px;
+    border-radius: 5px;
+}
 
