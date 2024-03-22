@@ -10,6 +10,7 @@ header{
         color: #fefefe;
     }
 }
+
 body{
     background-color: #fffafa;
     color: #0f0f0f;
@@ -22,7 +23,7 @@ main{
     margin: 100px;    
 }
 footer{
-    background-color: #0f0f0f;
+    background-color: #5b5b5b;
     color:#ffffff;
     padding: 50px;
     font-size: 15pt; 
