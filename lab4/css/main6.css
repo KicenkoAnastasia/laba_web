@@ -4,7 +4,6 @@ header{
     padding: 30px;
     font-size: 20px;
     padding: 50px;
-    
     a{
         border: 2px solid #ffffff; 
         background-color: #12121200; 
@@ -13,9 +12,7 @@ header{
         border-radius: 5px;
         text-decoration: none;
     }
-    
 }
-
 body{
     background-color: #ffffff;
     color: #0f0f0f;
@@ -26,7 +23,7 @@ body{
 main{
     padding: 20px;
     margin: 100px;
-    margin-bottom: 300px;
+    margin-bottom: 200px;
 }
 footer{
     background-color: #000000;
