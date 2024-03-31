@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Group 11.png">
+    <title>Комикс</title>
+    <link rel="stylesheet" href="css/main6.css">
+    <style> 
+        h1{
+            text-align: center;
+        }
+        .imgg{
+            width: 90%;
+            
+            margin-left: 50px;
+            margin-right: 30px;
+            margin-bottom: 10px
+        }
+        .dialog{
+            background-color: #f4f4f4;
+            border-radius: 80px;
+            line-height: 70px;
+            text-align: center;
+            position: relative; /*относительное позиционирование */
+            font-size: 20px;
+            z-index: 3;
+            box-shadow: 3px 3px 5px rgb(44, 44, 44);
+            transition: opacity 0.5s ease-in-out; /* Плавное появление */
+            opacity: 0; /* Изначально скрыт */
+        }
+        .oblako2{
+            background-color: #f4f4f4;
+            border-radius: 100px; 
+            width: 40px;
+            height: 40px;
+            line-height: 1000px; 
+            text-align: center;
+            position: relative;
+            font-size: 20px;
+            z-index: 1;
+            box-shadow: 3px 3px 5px rgb(102, 102, 102);
+            transition: opacity 0.5s ease-in-out; 
+            opacity: 0; 
+        }
+        .oblako3{
+            background-color: #f4f4f4;
+            border-radius: 100px; 
+            width: 25px;
+            height: 25px;
+            line-height: 1000px; 
+            text-align: center;
+            position: relative;
+            font-size: 20px;
+            box-shadow: 3px 3px 5px rgb(102, 102, 102);
+            transition: opacity 0.9s ease-in-out; 
+            opacity: 0; 
+        }
+        .strelka {
+            background-color: #f4f4f4;
+            color: black;
+            border-radius: 100px; 
+            width: 35px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            position: relative;
+            font-size: 20px;
+            box-shadow: 3px 3px 5px rgb(102, 102, 102);
+            cursor: pointer; /* курсор указатель*/
+        }
+            /* При наведении на блок .strelka */
+        .strelka:hover + .dialog,
+        .strelka:hover + .dialog + .oblako2,
+        .strelka:hover + .dialog + .oblako2 + .oblako3 {
+            opacity: 1; /* Показ блоков */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ. ФБ. Лабораторная работа 4
+        <a href="../index.html">Общее меню</a>
+        <a href="lab4.html">назад</a>
+    </header>
+    <main>
+        <div>
+            <h1>Колыбельная Люцика для Короля Зога</h1>
+            <img src="../img/1.png" class="imgg">
+            <div class="strelka" style="left: 235px;top: -450px;"><span>...</span></div>
+            
+            <div class="dialog" style="left: 290px;top: -600px;width: 500px;height: auto;">
+                -Ну, иди сюда, лунатик толстобрюхий.</div>
+            <div class="oblako2" style="left: 265px;top: -620px;"></div>
+            <div class="oblako3" style="left: 255px;top: -630px;"></div>
+            <img src="../img/2.png" class="imgg">
+            <div class="strelka" style="left: 235px;top: -450px;"><span>...</span></div>
+            
+            <div class="dialog" style="left: 290px;top: -600px;width: 200px;
+            height: auto;">-Чмокни кису.</div>
+            <div class="oblako2" style="left: 265px;top: -620px;"></div>
+            <div class="oblako3" style="left: 255px;top: -630px;"></div>
+            
+            <img src="../img/3.png" class="imgg">
+            <div class="strelka" style="left: 235px;top: -450px;"><span>...</span></div>
+            <div class="dialog" style="left: 290px;top: -600px;width: 500px;
+            height: auto;">-ляг поудобнее ты на кровать.</div>
+            <div class="oblako2" style="left: 265px;top: -620px;"></div>
+            <div class="oblako3" style="left: 255px;top: -630px;"></div>
+
+            <img src="../img/4.png" class="imgg">
+            <div class="strelka" style="left: 235px;top: -450px;"><span>...</span></div>
+            <div class="dialog" style="left: 290px;top: -600px;width: 500px;
+            height: auto;">-копов не стану я вызывать.</div>
+            <div class="oblako2" style="left: 265px;top: -620px;"></div>
+            <div class="oblako3" style="left: 255px;top: -630px;"></div>
+
+            <img src="../img/5.png" class="imgg">
+            <div class="strelka" style="left: 410px;top: -580px;"><span>...</span></div>
+            <div class="dialog" style="left: 290px;top: -720px;width: 800px;
+            height: auto;">-скоро король сдуреет в конец.Всю власть захватит Люцик-хитрец.</div>
+            <div class="oblako2" style="left: 440px;top: -730px; ;"></div>
+            <div class="oblako3" style="left: 430px;top: -740px;"></div>
+        </div>
+    </main>
+    <footer>
+        &copy;Киценко Анастасия. ФБИ-21. 2 курс. 2024
+    </footer>
+</body>
+</html>
