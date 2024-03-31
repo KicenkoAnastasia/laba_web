@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Group 11.png">
+    <title>Дисконт в теории игр</title>
+    <link rel="stylesheet" href="css/main6.css">
+    <style> 
+        div {
+            background-color: rgb(244, 244, 244);
+            border-radius: 5px;
+            width: 300px;
+            height: 70px;
+            margin: 15px;
+            line-height: 70px;
+            text-align: center;
+            position: relative; /*относительное позиционирование */
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 2px 2px 5px rgb(231, 231, 231);
+        }
+        .position-relative {
+            left: 200px;
+            top: -130px;
+        }
+        .position-relative:hover {
+            z-index: 1; /* Устанавливаем более высокий z-index при наведении */
+            transition: z-index 0.1s;
+        }
+        .stat{
+            z-index: 1;
+        }
+        .position-absolute{
+            position: absolute;
+            left: 350px;
+        }
+        .position-absolute:hover{
+            width: 320px;
+            height: 80px;
+            background-color: black;
+            color: white;
+            z-index: 1;
+            box-shadow: 2px 2px 5px rgb(182, 182, 182);
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        НГТУ. ФБ. Лабораторная работа 4
+        <a href="../index.html">Общее меню</a>
+        <a href="lab4.html">назад</a>
+    </header>
+    <main>
+        <a id="verh"></a>
+        <div class="stat">static</div>
+        <div class="stat">static</div>
+        <div class="position-relative">relative</div>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-absolute">absolute</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+    </main>
+    <footer>
+        &copy;Киценко Анастасия. ФБИ-21. 2 курс. 2024
+    </footer>
+</body>
+</html>
