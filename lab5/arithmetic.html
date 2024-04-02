@@ -13,27 +13,45 @@
             let result = a + b;
             alert( 'Сумма ' + a + ' и ' + b + ' равна ' + result);
         }
-        
+        function showAutor(){
+            let autor = 'Автор страницы: \nКиценко Анастасия';
+            alert (autor);
+        }
+        function showFooter(){
+            let footer = 'Приветствую вас на моей странице. \nНадеюсь, вы здесь найдете интересующую вас информацию и приятно проведете время.';
+            alert (footer);
+        }
     </script>
 
     <style>
         .message{
             cursor: pointer;
-            background-color: #e2e2e2;
+            background-color: #eeeeee;
             display: inline-block;
-            padding: 10px;
+            padding: 20px;
             border-radius: 5px;
             position: relative;
             left: 350px;
             margin: 20px;
-            font-size: 20px;
-            
-
+            font-size: 20px;     
         }
+        .message:hover{
+            background-color: black;
+            color: #ffffff;
+            transition: 1s;
+            box-shadow: 3px 3px 10px rgb(180, 180, 180);
+        }
+        header{
+            cursor: pointer;
+        }
+        footer{
+            cursor: pointer;
+        }
+        
     </style>
 </head>
 <body>
-    <header >
+    <header onclick="showAutor()">
         НГТУ. ФБ. Лабораторная работа 5
         <a href="../index.html"><span style="border: 2px solid #ffffff; background-color: #12121200; color: #ffffff;
             padding: 5px;text-decoration: none;">Общее меню</span></a>
@@ -42,9 +60,9 @@
     </header>
     <main>
         <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-        <div class="message">Узнать, кто автор страницы</div>
+        <div class="message" onclick="showAutor()">Узнать, кто автор страницы</div>
     </main>
-    <footer>
+    <footer onclick="showFooter()">
         &copy;Киценко Анастасия. ФБИ-21. 2 курс. 2024
     </footer>
 </body>
