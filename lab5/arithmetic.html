@@ -9,7 +9,7 @@
     <script>
         function showSum() {
             let inputA = document.getElementById('numberA');
-            let inputB = document.getElementById('numberB')
+            let inputB = document.getElementById('numberB');
             let a = parseInt(inputA.value);
             let b = parseInt(inputB.value);
             let result = a + b;
@@ -23,6 +23,27 @@
             let footer = 'Приветствую вас на моей странице. \nНадеюсь, вы здесь найдете интересующую вас информацию и приятно проведете время.';
             alert (footer);
         }
+
+        function showQuotient(){
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a - b;
+            alert('Разность' + a + ' и ' + b + ' равна ' + result);
+
+        }
+
+        function showDel(){
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a / b;
+            alert('Разность' + a + ' и ' + b + ' равна ' + result);
+
+        }
+
     </script>
 
     <style>
@@ -33,9 +54,12 @@
             padding: 20px;
             border-radius: 5px;
             position: relative;
-            left: 440px;
+            left: 430px;
             margin: 10px;
-            font-size: 20px;     
+            font-size: 20px;   
+            width: 300px; 
+            vertical-align: top;
+            
         }
         .message:hover{
             background-color: black;
@@ -43,9 +67,7 @@
             transition: 1s;
             box-shadow: 3px 3px 10px rgb(180, 180, 180);
         }
-        header{
-            cursor: pointer;
-        }
+        
         footer{
             cursor: pointer;
         }
@@ -81,15 +103,17 @@
             transition: 1s;
         }
         
+
+
     </style>
 </head>
 <body>
-    <header onclick="showAutor()">
+    <header>
         НГТУ. ФБ. Лабораторная работа 5
         <a href="../index.html"><span style="border: 2px solid #ffffff; background-color: #12121200; color: #ffffff;
-            padding: 5px;text-decoration: none;">Общее меню</span></a>
+            padding: 5px;text-decoration: none;cursor: pointer;">Общее меню</span></a>
         <a href="lab4.html"><span style="border: 2px solid #ffffff; background-color: #12121200; color: #ffffff;
-            padding: 5px;text-decoration: none;">назад</span></a>
+            padding: 5px;text-decoration: none;cursor: pointer;">назад</span></a>
     </header>
     <main>
         <div class="dd">
@@ -100,7 +124,14 @@
                 <label>Второе число: <input type="number" value="" id="numberB"></label><br>
             </div>
         </div>
+        
         <div class="message" onclick="showSum()">Найти сумму чисел: </div>
+
+        <div class="message" onclick="showQuotient()"> Найти разность чисел: </div><br>
+        <div class="message" onclick="showDel()"> Найти деление чисел: </div>
+
+     
+        <!-- "Найти разность чисел", "Найти произведение", "Найти деление". -->
         <div class="message" onclick="showAutor()">Узнать, кто автор страницы</div>
     </main>
     <footer onclick="showFooter()">
