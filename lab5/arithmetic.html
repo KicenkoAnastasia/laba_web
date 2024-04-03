@@ -43,6 +43,16 @@
             alert('Разность' + a + ' и ' + b + ' равна ' + result);
 
         }
+        function changeOutput(buttonNum, backColor, textColor, borderRadius){
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.textAlign = 'center';
+            output.style.paddingTop = '15px';
+            output.style.borderRadius = borderRadius;
+            
+        }
 
     </script>
 
@@ -54,10 +64,10 @@
             padding: 20px;
             border-radius: 5px;
             position: relative;
-            left: 430px;
+            left: 320px;
             margin: 10px;
             font-size: 20px;   
-            width: 300px; 
+            width: 400px; 
             vertical-align: top;
             
         }
@@ -102,7 +112,24 @@
             color: #ffffff;
             transition: 1s;
         }
-        
+        #output{
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+            border-radius: 5px;
+            position: relative;
+            left: 650px;
+            top: 100px;
+            
+            }
+        #knopka{
+            position: relative;
+            left: -330px;
+            top: 120px;
+            padding: 15px;
+            
+            
+        }
 
 
     </style>
@@ -124,15 +151,21 @@
                 <label>Второе число: <input type="number" value="" id="numberB"></label><br>
             </div>
         </div>
-        
         <div class="message" onclick="showSum()">Найти сумму чисел: </div>
-
         <div class="message" onclick="showQuotient()"> Найти разность чисел: </div><br>
         <div class="message" onclick="showDel()"> Найти деление чисел: </div>
+<!-- "Найти разность чисел", "Найти произведение", "Найти деление". -->
+        <div class="message" onclick="showAutor()">Узнать, кто автор страницы</div>
+
+        <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'RosyBrown', 'black','5px')" id="knopka" >
+        <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'Bisque', 'black','5px')" id="knopka">
+        <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'LightCyan', 'black','5px')" id="knopka">
+        <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'Pink', 'black','5px')" id="knopka">
+
+        <div id="output"></div>
 
      
-        <!-- "Найти разность чисел", "Найти произведение", "Найти деление". -->
-        <div class="message" onclick="showAutor()">Узнать, кто автор страницы</div>
+        
     </main>
     <footer onclick="showFooter()">
         &copy;Киценко Анастасия. ФБИ-21. 2 курс. 2024
