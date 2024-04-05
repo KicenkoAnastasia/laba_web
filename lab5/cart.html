@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Group 11.png">
+    <title>Киценко Анастасия Валерьевна.Лабораторная 5</title>
+    <link rel="stylesheet" href="css2/main9.css">
+ 
+    
+    <script>
+        function calculateTotal() {
+            let item1Price = 500; // Цена товара 1
+            let item2Price = 200; // Цена товара 2
+            let item3Price = 750; // Цена товара 3
+            let item4Price = 880; // Цена товара 4
+            let item5Price = 620; // Цена товара 5
+
+            let item1Qty = parseInt(document.getElementById("item1").value);
+            let item2Qty = parseInt(document.getElementById("item2").value);
+            let item3Qty = parseInt(document.getElementById("item3").value);
+            let item4Qty = parseInt(document.getElementById("item4").value);
+            let item5Qty = parseInt(document.getElementById("item5").value);
+
+            // Проверяем, является ли введенное значение числом, если нет - присваиваем 0
+            item1Qty = isNaN(item1Qty) ? 0 : item1Qty;
+            item2Qty = isNaN(item2Qty) ? 0 : item2Qty;
+            item3Qty = isNaN(item3Qty) ? 0 : item3Qty;
+            item4Qty = isNaN(item4Qty) ? 0 : item4Qty;
+            item5Qty = isNaN(item5Qty) ? 0 : item5Qty;
+
+            let total = (item1Price * item1Qty) + (item2Price * item2Qty) + (item3Price * item3Qty) + (item4Price * item4Qty) + (item5Price * item5Qty);
+
+            document.getElementById("total").textContent = total;
+        }
+    </script>
+
+    <style>
+        body {
+            background-image: url("../lab4/foto/fon.png");
+            background-size: cover; /* Чтобы изображение занимало всю доступную область */
+            background-repeat: no-repeat; /* Чтобы изображение не повторялось */
+        }
+        .d{
+            background-color: #ffffff88;
+            border-radius: 15px;
+            color: black;
+            position: relative;
+            left: 400px;
+            top: 40px;
+            width: 700px;
+            font-size: 30px;
+        }
+        
+        .dd1{
+            padding: 30px;
+            padding-left: 40px;
+        }
+        
+        input[type="number"]{
+            padding: 8px; 
+            border: 2px solid #ccc; 
+            border-radius: 9px; 
+            font-size: 14px;
+            margin-bottom: 10px;
+            padding-left: 30px;
+        }
+        
+        .name {
+            border: solid 1px rgba(0, 0, 0, 0);
+            width: 30px;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 7px;
+            font-size: 20px;
+            transition: border 0.2s; 
+        }
+        .name:hover {
+            border: solid 1px black; 
+        }
+        .calculate-button {
+            background-color: rgb(0, 0, 0);
+            color: #ffffff;
+            border-radius: 6px;
+            font-size: 20px;
+            padding: 15px;
+            margin-bottom: 20px;
+            margin-left: 140px;
+            width: 400px;
+            cursor: pointer;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <header onclick="showAutor()">
+        НГТУ. ФБ. Лабораторная работа 5
+        <a href="../index.html"><span style="border: 2px solid #ffffff; background-color: #12121200; color: #ffffff;
+            padding: 5px;text-decoration: none;">Общее меню</span></a>
+        <a href="lab4.html"><span style="border: 2px solid #ffffff; background-color: #12121200; color: #ffffff;
+            padding: 5px;text-decoration: none;">назад</span></a>
+    </header>
+    <main>
+     
+            <div class="dd1 d">
+                    <h2 style="text-align: center;">Корзина товаров</h2>
+                
+                    <label for="item1" class="name" style="cursor: pointer;"> MUZA «Rainbow» В140 (500 руб/шт)</label>
+                    <input type="number" id="item1" min="0"   placeholder="Введите количество"><br><br>
+                   
+                    <label for="item2" class="name" style="cursor: pointer;" >MUZA «Rainbow» В39  (200 руб/шт)</label>
+                    <input type="number" id="item2" min="0"  style="margin-left: 10px;"  placeholder="Введите количество"><br><br>
+                        
+                    <label for="item3" class="name" style="cursor: pointer;">MUZA «Rainbow» В128 (750 руб/шт)</label>
+                    <input type="number" id="item3" min="0" placeholder="Введите количество"><br><br>
+                        
+                    <label for="item4" class="name" style="cursor: pointer;">MUZA «Rainbow» В116 (880 руб/шт)</label>
+                    <input type="number" id="item4" min="0" placeholder="Введите количество"><br><br>
+                        
+                    <label for="item5" class="name" style="cursor: pointer;">MUZA «Rainbow» В170 (620 руб/шт)</label>
+                    <input type="number" id="item5" min="0" placeholder="Введите количество"><br><br>
+                        
+                    <button class="calculate-button" onclick="calculateTotal()">Рассчитать</button><br>
+                        
+                    <label for="total" style="font-size: 25px;">Общая сумма к оплате: </label>
+                    <span id="total">0</span> руб.
+            </div>
+       
+       
+    </main>
+    <footer>
+        &copy;Киценко Анастасия. ФБИ-21. 2 курс. 2024
+    </footer>
+</body>
+</html>
