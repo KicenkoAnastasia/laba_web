@@ -33,6 +33,15 @@
 
             document.getElementById("total").textContent = total;
         }
+
+        function clearForm() {
+            document.getElementById("item1").value = ""; // Очистка значения первого поля
+            document.getElementById("item2").value = ""; // Очистка значения второго поля
+            document.getElementById("item3").value = ""; // Очистка значения третьего поля
+            document.getElementById("item4").value = ""; // Очистка значения четвертого поля
+            document.getElementById("item5").value = ""; // Очистка значения пятого поля
+            document.getElementById("total").textContent = "0"; // Сброс общей суммы
+        }
     </script>
 
     <style>
@@ -79,7 +88,7 @@
             border: solid 1px black; 
         }
         .calculate-button {
-            background-color: rgb(0, 0, 0);
+            background-color: #000000;
             color: #ffffff;
             border-radius: 6px;
             font-size: 20px;
@@ -87,8 +96,31 @@
             margin-bottom: 20px;
             margin-left: 140px;
             width: 400px;
+            transition:  1s;
+            transition: color 1s;
             cursor: pointer;
             
+        }
+        .calculate-button:hover{
+            background-color: #ffffff00;
+            color: #000000;   
+        }
+        .clear-button{
+            background-color: #000000;
+            color: #ffffff;
+            border-radius: 6px;
+            font-size: 20px;
+            padding: 15px;
+            margin-bottom: 20px;
+            margin-left: 140px;
+            width: 400px;
+            transition:  1s;
+            transition: color 1s;
+            cursor: pointer;
+        }
+        .clear-button:hover{
+            background-color: #ffffff00;
+            color: #000000;   
         }
     </style>
 </head>
@@ -98,7 +130,7 @@
         НГТУ. ФБ. Лабораторная работа 5
         <a href="../index.html"><span style="border: 2px solid #ffffff; background-color: #12121200; color: #ffffff;
             padding: 5px;text-decoration: none;">Общее меню</span></a>
-        <a href="lab4.html"><span style="border: 2px solid #ffffff; background-color: #12121200; color: #ffffff;
+        <a href="lab5.html"><span style="border: 2px solid #ffffff; background-color: #12121200; color: #ffffff;
             padding: 5px;text-decoration: none;">назад</span></a>
     </header>
     <main>
@@ -122,6 +154,7 @@
                     <input type="number" id="item5" min="0" placeholder="Введите количество"><br><br>
                         
                     <button class="calculate-button" onclick="calculateTotal()">Рассчитать</button><br>
+                    <button class="calculate-button clear-button" onclick="clearForm()">Очистить</button><br>   
                         
                     <label for="total" style="font-size: 25px;">Общая сумма к оплате: </label>
                     <span id="total">0</span> руб.
