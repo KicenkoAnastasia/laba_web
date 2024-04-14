@@ -25,7 +25,18 @@
             document.getElementById('contrastOutput').innerText = value; // Здесь исправлено
             document.getElementById('contrastImage').style.filter = 'contrast(' + value + ')';
         }
-       
+        function grayscale(){
+            let value = document.getElementById('grayscaleValue').value + '%';
+            document.getElementById('grayscaleOutput').innerText = value; // Здесь исправлено
+            document.getElementById('grayscaleImage').style.filter = 'grayscale(' + value + ')';
+        }
+        function hueRotate() {
+            let value = document.getElementById('hue-rotateValue').value + 'deg'; // Добавляем градусы к значению
+            document.getElementById('hue-rotateOutput').innerText = value;
+            document.getElementById('hue-rotateImage').style.filter = 'hue-rotate(' + value + ')';
+        }
+
+
    </script>
    <style>
         body {
@@ -76,8 +87,22 @@
     </div>
     <div><img src="../img/12.png" id="brightnessImage"></div>
 
- 
+    <div>
+        Фильтр оттенков серого:
+        <input type="range" min="0" max="100" value="0" onchange="grayscale()" id="grayscaleValue">
+        <span id="grayscaleOutput"></span>
+    </div>
+    <div><img src="../img/13.png" id="grayscaleImage"></div>
+    
         
+    <div>
+        Фильтр оттенков цвета:
+        <input type="range" min="0" max="360" value="0" onchange="hueRotate()" id="hue-rotateValue">
+        <span id="hue-rotateOutput"></span>
+    </div>
+    <div><img src="../img/14.png" id="hue-rotateImage"></div>
+
+
     </main>
     <footer>
         &copy;Киценко Анастасия. ФБИ-21. 2 курс. 2024
