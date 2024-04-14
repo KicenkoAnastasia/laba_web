@@ -17,26 +17,31 @@
         }
         function brightness(){
             let value = document.getElementById('brightnessValue').value + '%';
-            document.getElementById('brightnessOutput').innerText = value; // Здесь исправлено
+            document.getElementById('brightnessOutput').innerText = value; 
             document.getElementById('brightnessImage').style.filter = 'brightness(' + value + ')';
         }
-        function contrast(){
-            let value = document.getElementById('contrastsValue').value + '%';
-            document.getElementById('contrastOutput').innerText = value; // Здесь исправлено
-            document.getElementById('contrastImage').style.filter = 'contrast(' + value + ')';
+        function contrast() {
+            let value = document.getElementById('contrastValue').value;
+            document.getElementById('contrastOutput').innerText = value + '%';
+            document.getElementById('contrastImage').style.filter = 'contrast(' + value + '%)';
         }
         function grayscale(){
             let value = document.getElementById('grayscaleValue').value + '%';
-            document.getElementById('grayscaleOutput').innerText = value; // Здесь исправлено
+            document.getElementById('grayscaleOutput').innerText = value; 
             document.getElementById('grayscaleImage').style.filter = 'grayscale(' + value + ')';
         }
         function hueRotate() {
-            let value = document.getElementById('hue-rotateValue').value + 'deg'; // Добавляем градусы к значению
+            let value = document.getElementById('hue-rotateValue').value + 'deg';
             document.getElementById('hue-rotateOutput').innerText = value;
             document.getElementById('hue-rotateImage').style.filter = 'hue-rotate(' + value + ')';
         }
-
-
+        function invert() {
+            let value = document.getElementById('invertValue').value + '%';
+            document.getElementById('invertOutput').innerText = value;
+            document.getElementById('invertImage').style.filter = 'invert(' + value + ')';
+        }
+       
+        
    </script>
    <style>
         body {
@@ -102,6 +107,14 @@
     </div>
     <div><img src="../img/14.png" id="hue-rotateImage"></div>
 
+    <div>
+        Фильтр инвертирование цвета:
+        <input type="range" min="0" max="100" value="0" onchange="invert()" id="invertValue">
+        <span id="invertOutput"></span>
+    </div>
+    <div><img src="../img/16.png" id="invertImage"></div>
+
+ 
 
     </main>
     <footer>
