@@ -6,9 +6,66 @@
     <link rel="icon" href="../Group 11.png">
     <title>Киценко Анастасия Валерьевна.Лабораторная 5</title>
     <link rel="stylesheet" href="css2/main9.css">
-    
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@400;700&display=swap"> -->
+    <style>
+        body {
+            background-image: url("../lab4/foto/fon.png");
+            background-size: cover; /* Чтобы изображение занимало всю доступную область */
+            background-repeat: no-repeat; /* Чтобы изображение не повторялось */
+            /* font-family: 'Yanone Kaffeesatz', sans-serif;
+            font-display: swap; */
+            font-size: 30px;
+        }
+        a{
+            text-decoration: none;
+            color: #000000;
+            transition: color 0.7s;
+            
+        }
+        a:hover{
+            color: #d590da;
+        }
+        li{
+            color: #000000;
+            transition: color 0.7s;;
+        }
+        li:hover{
+            color: #d590da;
+        }
+        .divv {
+            background-color: #ffffffa7;
+            border-radius: 10px;
+            font-size: 35px;
+            color: black;
+            width: 400px;
+            height: 300px;
+            position: relative;
+            left: 500px;
+            display: flex; /*  центрированиe содержимого */
+            justify-content: center; /*  по горизонтали */
+            align-items: center; /* по вертикали */
+            margin-top: 100px;
+            transition: 2s;
+        }
+        .divv:hover{
+            background-color: #0000006f;
+            color: rgb(0, 0, 0);
+        }
+
+        .dd {
+            text-align: left;
+            list-style-position: inside; /* маркеры списка внутрь элемента списка */
+            padding: 0;
+            line-height: 45px;
+        }
+
+        .dd li {
+            margin: 10px 0; /* Устанавливаем вертикальный отступ между пунктами списка */
+        }
+    </style>
 </head>
 <body>
+    
     <header onclick="showAutor()">
         НГТУ. ФБ. Лабораторная работа 5
         <a href="../index.html"><span style="border: 2px solid #ffffff; background-color: #12121200; color: #ffffff;
@@ -17,7 +74,14 @@
             padding: 5px;text-decoration: none;">назад</span></a>
     </header>
     <main>
-        
+        <div class="divv">
+            <ul class="dd">
+                <li><a href="arithmetic.html">Расчеты</a></li>
+                <li><a href="cart.html">Корзина</a></li>
+                <li><a href="circles.html">Круги</a></li>
+                <li><a href="filters.html">Фильтры</a></li>
+            </ul>
+        </div>
     </main>
     <footer>
         &copy;Киценко Анастасия. ФБИ-21. 2 курс. 2024
