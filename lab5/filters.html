@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Group 11.png">
+    <title>Киценко Анастасия Валерьевна.Лабораторная 5</title>
+    <link rel="stylesheet" href="css2/main9.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@400;700&display=swap">
+   <script>
+        function blurImage(){
+            let value = document.getElementById('blurValue').value + 'px';
+            document.getElementById('blurOutput').innerText = value;
+            document.getElementById('blurImage').style.filter = 'blur(' + value + ')';
+
+            
+        }
+        function brightness(){
+            let value = document.getElementById('brightnessValue').value + '%';
+            document.getElementById('brightnessOutput').innerText = value; // Здесь исправлено
+            document.getElementById('brightnessImage').style.filter = 'brightness(' + value + ')';
+        }
+       
+   </script>
+   <style>
+        body {
+            background-image: url("../lab4/foto/fon.png");
+            background-size: cover; /*изображение на всю доступную область */
+            background-repeat: no-repeat;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+            font-size: 40px;
+        }
+        div{
+            position: relative;
+            display: flex; /*  центрированиe содержимого */
+            justify-content: center; /*  по горизонтали */
+            align-items: center; /* по вертикали */
+            margin-top: 60px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <header onclick="showAutor()">
+        НГТУ. ФБ. Лабораторная работа 5
+        <a href="../index.html"><span style="border: 2px solid #ffffff; background-color: #12121200; color: #ffffff;
+            padding: 5px;text-decoration: none;">Общее меню</span></a>
+        <a href="lab5.html"><span style="border: 2px solid #ffffff; background-color: #12121200; color: #ffffff;
+            padding: 5px;text-decoration: none;">назад</span></a>
+    </header>
+    <main>
+     <div>
+        Фильр blur:
+        <input type="range" min="0" max="20" value="0" onchange="blurImage()" id="blurValue">
+        <span id="blurOutput"></span>
+     </div>
+     <div><img src="../img/cotik.png" id="blurImage"></div>
+
+     <div>
+        Фильтр яркости:
+        <input type="range" min="0" max="500" value="100" onchange="brightness()" id="brightnessValue">
+        <span id="brightnessOutput"></span>
+    </div>
+    <div><img src="../img/11.png" id="brightnessImage"></div>
+
+    
+        
+    </main>
+    <footer>
+        &copy;Киценко Анастасия. ФБИ-21. 2 курс. 2024
+    </footer>
+    
+   
+</body>
+</html>
