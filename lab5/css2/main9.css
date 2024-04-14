@@ -6,19 +6,13 @@ header{
     a{
         text-decoration: none;
     }
-
 }
 body{
     background-color: #fefff8;
-    /* font-family: Courier; */
     margin: 0px;
-
     main{
         margin-bottom: 250px;
     }
-
-
-    
     footer{
         background-color: #000000;
         color:#ffffff;
