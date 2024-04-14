@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Group 11.png">
+    <title>Киценко Анастасия Валерьевна.Лабораторная 5</title>
+    <link rel="stylesheet" href="css2/main9.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@400;700&display=swap">
+    <style>
+        body {
+            background-image: url("../lab4/foto/fon.png");
+            background-size: cover; /*изображение на всю доступную область */
+            background-repeat: no-repeat;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+            font-size: 40px;
+        }
+    
+
+        .circle {
+            
+            border: 10px double #ffffffb9;
+            /* border: dotted 2px #a7a7a7; */
+            position: absolute; 
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px; /* Для центрирования содержимого */
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.5s ease; /* Добавление плавных переходов для изменения размеров и прозрачности */
+        }
+        #circle1 {
+            width: 100px;
+            height: 100px;
+            background-color: #fba5fc;
+            left: 500px;
+            top: 100px;
+        }
+        
+        #circle2 {
+            width: 120px;
+            height: 120px;
+            background-color: #b0b0e0;
+            left: 400px;
+            top: 250px;
+        }
+        
+        #circle3 {
+            width: 80px;
+            height: 80px;
+            background-color: #d7ff71;
+            left: 330px;
+            top: 400px;
+        }
+
+        #circle4 {
+            width: 100px;
+            height: 100px;
+            background-color: #eaf692;
+            left: 600px;
+            top: 450px;
+        }
+
+        #circle5 {
+            width: 140px;
+            height: 140px;
+            background-color: #8cff4a;
+            left: 900px;
+            top: 400px;
+        }
+
+        #circle6 {
+            width: 90px;
+            height: 90px;
+            background-color: #fac8eb;
+            left: 600px;
+            top: 270px;
+        }
+        #circle7 {
+            width: 70px;
+            height: 70px;
+            background-color: #bdd6f7;
+            left: 900px;
+            top: 200px;
+        
+        }
+        #circle8 {
+            width: 130px;
+            height: 130px;
+            background-color: rgb(214, 112, 216);
+            left: 700px;
+            top: 100px;
+        }
+        #circle9 {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 98, 158);
+            left: 1000px;
+            top: 100px;
+        }
+        #circle10 {
+            width: 130px;
+            height: 130px;
+            background-color: #bbacee;
+            left: 1100px;
+            top: 300px;
+        }
+        #circle11 {
+            width: 100px;
+            height: 100px;
+            background-color: #fc77fe;
+            left: 740px;
+            top: 360px;
+        }
+        #circle12 {
+            width: 100px;
+            height: 100px;
+            background-color: #63fad4;
+            left: 250px;
+            top: 150px;
+        }
+        
+        #knopka{
+            background-color: rgba(0, 0, 0, 0);
+            color: #000000;
+            font-size: 30px;
+            margin: 20px;
+            padding: 10px;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <header onclick="showAutor()">
+        НГТУ. ФБ. Лабораторная работа 5
+        <a href="../index.html"><span style="border: 2px solid #ffffff; background-color: #12121200; color: #ffffff;
+            padding: 5px;text-decoration: none;">Общее меню</span></a>
+        <a href="lab4.html"><span style="border: 2px solid #ffffff; background-color: #12121200; color: #ffffff;
+            padding: 5px;text-decoration: none;">назад</span></a>
+    </header>
+    <main>
+        <div id="container">
+            <div id="circle1" class="circle" onclick="hideCircle('circle1')">1</div>
+            <div id="circle2" class="circle" onclick="hideCircle('circle2')">2</div>
+            <div id="circle3" class="circle" onclick="hideCircle('circle3')">3</div>
+            <div id="circle4" class="circle" onclick="hideCircle('circle4')">4</div>
+            <div id="circle5" class="circle" onclick="hideCircle('circle5')">5</div>
+            <div id="circle6" class="circle" onclick="hideCircle('circle6')">6</div>
+            <div id="circle7" class="circle" onclick="hideCircle('circle7')">7</div>
+            <div id="circle8" class="circle" onclick="hideCircle('circle8')">8</div>
+            <div id="circle9" class="circle" onclick="hideCircle('circle9')">9</div>
+            <div id="circle10" class="circle" onclick="hideCircle('circle10')">10</div>
+            <div id="circle11" class="circle" onclick="hideCircle('circle11')">11</div>
+            <div id="circle12" class="circle" onclick="hideCircle('circle12')">12</div>
+          
+        </div>
+        
+        <button id="knopka" onclick="resetCircles()">Сбросить</button>
+        
+    </main>
+    <footer>
+        &copy;Киценко Анастасия. ФБИ-21. 2 курс. 2024
+    </footer>
+    
+    <script>
+        function hideCircle(circleId) {
+            let circle = document.getElementById(circleId);
+            circle.style.opacity = '0'; 
+            circle.style.width = '0'; 
+            circle.style.height = '0'; 
+            setTimeout(() => { /*аймер для возврт44444\
+                ата изначальных размеров */
+                circle.style.visibility = 'hidden'; /* Скрываем элемент, сохраняя его пространство */
+            }, 500); /* 0.5 секунды */
+        }
+
+        function resetCircles() {
+            let circles = document.querySelectorAll('.circle');
+            circles.forEach(circle => {
+                circle.style.opacity = '1'; /* Сбрасываем прозрачность */
+                circle.style.width = ''; /* Возвращаем ширину к начальному значению */
+                circle.style.height = ''; /* Возвращает высоту к начальному значению */
+                circle.style.visibility = 'visible'; /* Показывает элемент */
+            });
+        }
+    </script>
+</body>
+</html>
