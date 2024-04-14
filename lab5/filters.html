@@ -40,6 +40,12 @@
             document.getElementById('invertOutput').innerText = value;
             document.getElementById('invertImage').style.filter = 'invert(' + value + ')';
         }
+        function saturate() {
+            let value = document.getElementById('saturateValue').value + '%';
+            document.getElementById('saturateOutput').innerText = value;
+            document.getElementById('saturateImage').style.filter = 'saturate(' + value + ')';
+        }
+
        
         
    </script>
@@ -114,6 +120,12 @@
     </div>
     <div><img src="../img/16.png" id="invertImage"></div>
 
+    <div>
+        Фильтр насыщенность цвета:
+        <input type="range" min="0" max="500" value="100" onchange="saturate()" id="saturateValue">
+        <span id="saturateOutput"></span>
+    </div>
+    <div><img src="../img/17.png" id="saturateImage"></div>
  
 
     </main>
