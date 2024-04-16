@@ -6,13 +6,11 @@
     <link rel="icon" href="../Group 11.png">
     <title>Киценко Анастасия Валерьевна.Лабораторная 5</title>
     <link rel="stylesheet" href="css2/main9.css">
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@400;700&display=swap"> -->
     <style>
         body {
             background-image: url("../lab4/foto/fon.png");
             background-size: cover; /*изображение на всю доступную область */
             background-repeat: no-repeat;
-            /* font-family: 'Yanone Kaffeesatz', sans-serif; */
             font-size: 40px;
         }
     
@@ -20,11 +18,10 @@
         .circle {
             
             border: 10px double #ffffffb9;
-            /* border: dotted 2px #a7a7a7; */
             position: absolute; 
             border-radius: 50%;
             text-align: center;
-            line-height: 100px; /* Для центрирования содержимого */
+            line-height: 100px; /*центрирование содержимого */
             font-size: 20px;
             cursor: pointer;
             transition: all 0.5s ease; /* Добавление плавных переходов для изменения размеров и прозрачности */
@@ -121,14 +118,16 @@
         }
         
         #knopka{
-            background-color: rgba(0, 0, 0, 0);
-            color: #000000;
+            background-color: #000000;
+            color: #ffffff;
+            border-radius: 7px;
             font-size: 20px;
             margin: 20px;
             padding: 10px;
-            /* font-family: 'Yanone Kaffeesatz', sans-serif; */
-
             cursor: pointer;
+            position: relative;
+            left: 650px;
+            top:480px;
         }
     </style>
 </head>
@@ -171,8 +170,7 @@
             circle.style.opacity = '0'; 
             circle.style.width = '0'; 
             circle.style.height = '0'; 
-            setTimeout(() => { /*аймер для возврт44444\
-                ата изначальных размеров */
+            setTimeout(() => { /*таймер для возвртата изначальных размеров */
                 circle.style.visibility = 'hidden'; /* Скрываем элемент, сохраняя его пространство */
             }, 500); /* 0.5 секунды */
         }
@@ -180,9 +178,9 @@
         function resetCircles() {
             let circles = document.querySelectorAll('.circle');
             circles.forEach(circle => {
-                circle.style.opacity = '1'; /* Сбрасываем прозрачность */
-                circle.style.width = ''; /* Возвращаем ширину к начальному значению */
-                circle.style.height = ''; /* Возвращает высоту к начальному значению */
+                circle.style.opacity = '1'; /* Сбрасывает прозрачность */
+                circle.style.width = ''; 
+                circle.style.height = '';
                 circle.style.visibility = 'visible'; /* Показывает элемент */
             });
         }
