@@ -45,13 +45,12 @@
         }
         function changeOutput(buttonNum, backColor, textColor, borderRadius){
             let output = document.getElementById('output');
-            output.innerHTML = 'Нажата кнопка' + buttonNum;
+            output.innerHTML = 'Нажата кнопка <b> ' + buttonNum + "</b>";
             output.style.backgroundColor = backColor;
             output.style.color = textColor;
             output.style.textAlign = 'center';
             output.style.paddingTop = '15px';
             output.style.borderRadius = borderRadius;
-            
         }
 
     </script>
@@ -158,9 +157,9 @@
         <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'RosyBrown', 'black','5px')" id="knopka" >
         <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'Bisque', 'black','5px')" id="knopka">
         <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'LightCyan', 'black','5px')" id="knopka">
-        <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'Pink', 'black','5px')" id="knopka">
+        <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'Pink', 'black','10px')" id="knopka">
 
-        <div id="output"></div>
+        <div id="output" ></div>
 
      
         
