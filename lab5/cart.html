@@ -10,11 +10,11 @@
     
     <script>
         function calculateTotal() {
-            let item1Price = 500; // Цена товара 1
-            let item2Price = 200; // Цена товара 2
-            let item3Price = 750; // Цена товара 3
-            let item4Price = 880; // Цена товара 4
-            let item5Price = 620; // Цена товара 5
+            let item1Price = 500; 
+            let item2Price = 200; 
+            let item3Price = 750; 
+            let item4Price = 880; 
+            let item5Price = 620; 
 
             let item1Qty = parseInt(document.getElementById("item1").value);
             let item2Qty = parseInt(document.getElementById("item2").value);
@@ -22,7 +22,7 @@
             let item4Qty = parseInt(document.getElementById("item4").value);
             let item5Qty = parseInt(document.getElementById("item5").value);
 
-            // Проверяем, является ли введенное значение числом, если нет - присваиваем 0
+            // Проверка , является ли введенное значение числом, если нет -  0
             item1Qty = isNaN(item1Qty) ? 0 : item1Qty;
             item2Qty = isNaN(item2Qty) ? 0 : item2Qty;
             item3Qty = isNaN(item3Qty) ? 0 : item3Qty;
@@ -35,11 +35,11 @@
         }
 
         function clearForm() {
-            document.getElementById("item1").value = ""; // Очистка значения первого поля
-            document.getElementById("item2").value = ""; // Очистка значения второго поля
-            document.getElementById("item3").value = ""; // Очистка значения третьего поля
-            document.getElementById("item4").value = ""; // Очистка значения четвертого поля
-            document.getElementById("item5").value = ""; // Очистка значения пятого поля
+            document.getElementById("item1").value = ""; 
+            document.getElementById("item2").value = "";
+            document.getElementById("item3").value = ""; 
+            document.getElementById("item4").value = "";
+            document.getElementById("item5").value = ""; 
             document.getElementById("total").textContent = "0"; // Сброс общей суммы
         }
     </script>
@@ -48,7 +48,7 @@
         body {
             background-image: url("../lab4/foto/fon.png");
             background-size: cover; /* Чтобы изображение занимало всю доступную область */
-            background-repeat: no-repeat; /* Чтобы изображение не повторялось */
+            background-repeat: no-repeat; 
         }
         .d{
             background-color: #ffffff88;
