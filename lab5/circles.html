@@ -13,18 +13,14 @@
             background-repeat: no-repeat;
             font-size: 40px;
         }
-    
-
         .circle {
-            
-            
             position: absolute; 
             border-radius: 50%;
             text-align: center;
-            line-height: 100px; /*центрирование содержимого */
+            line-height: 100px; /*центрирование */
             font-size: 20px;
             cursor: pointer;
-            transition: all 0.5s ease; /* Добавление плавных переходов для изменения размеров и прозрачности */
+            transition: all 0.5s ease; 
         }
         #circle1 {
             width: 100px;
@@ -34,7 +30,6 @@
             top: 100px;
             border: 10px double #ef67f1;
         }
-        
         #circle2 {
             width: 120px;
             height: 120px;
@@ -43,7 +38,6 @@
             top: 250px;
             border: 10px double #8686db;
         }
-        
         #circle3 {
             width: 80px;
             height: 80px;
@@ -52,7 +46,6 @@
             top: 400px;
             border: 10px double #bef041;
         }
-
         #circle4 {
             width: 100px;
             height: 100px;
@@ -61,7 +54,6 @@
             top: 450px;
             border: 10px double #daeb57;
         }
-
         #circle5 {
             width: 140px;
             height: 140px;
@@ -70,7 +62,6 @@
             top: 400px;
             border: 10px double #69f419;
         }
-
         #circle6 {
             width: 90px;
             height: 90px;
@@ -86,7 +77,6 @@
             left: 900px;
             top: 200px;
             border: 10px double #86b2ea;
-        
         }
         #circle8 {
             width: 130px;
@@ -128,7 +118,6 @@
             top: 150px;
             border: 10px double #21dcae;
         }
-        
         #knopka{
             background-color: #000000;
             color: #ffffff;
@@ -168,14 +157,12 @@
             <div id="circle12" class="circle" onclick="hideCircle('circle12')">12</div>
           
         </div>
-        
+
         <button id="knopka" onclick="resetCircles()">Сбросить</button>
-        
     </main>
     <footer>
         &copy;Киценко Анастасия. ФБИ-21. 2 курс. 2024
     </footer>
-    
     <script>
         function hideCircle(circleId) {
             let circle = document.getElementById(circleId);
@@ -183,14 +170,13 @@
             circle.style.width = '0'; 
             circle.style.height = '0'; 
             setTimeout(() => { /*таймер для возвртата изначальных размеров */
-                circle.style.visibility = 'hidden'; /* Скрываем элемент, сохраняя его пространство */
+                circle.style.visibility = 'hidden'; 
             }, 500); /* 0.5 секунды */
         }
-
         function resetCircles() {
             let circles = document.querySelectorAll('.circle');
             circles.forEach(circle => {
-                circle.style.opacity = '1'; /* Сбрасывает прозрачность */
+                circle.style.opacity = '1';
                 circle.style.width = ''; 
                 circle.style.height = '';
                 circle.style.visibility = 'visible'; /* Показывает элемент */
