@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Group 11.png">
+    <title>Киценко Анастасия Валерьевна.Лабораторная №6</title>
+    <link rel="stylesheet" href="css3/main11.css">
+</head>
+<body>
+    
+    <header onclick="showAutor()">
+        НГТУ | ФБ | Лабораторная работа №6 |
+        <a href="../index.html"><span>Общее меню</span></a>
+        <a href="../lab6/lab6.html"><span>назад</span></a>
+    </header>
+    <script>
+        function changeColor(div) {
+            if (div.style.backgroundColor == 'plum') {
+                div.style.backgroundColor = 'darkgray';
+                div.style.color = 'black';
+                document.getElementById('color-name').innerHTML = 'темно-серый';
+
+
+            } else if (div.style.backgroundColor == 'darkgray') {
+                div.style.backgroundColor = 'lightcoral';
+                document.getElementById('color-name').innerHTML = 'светло-коралловый ';
+
+
+            } else if (div.style.backgroundColor == 'lightcoral') {
+                div.style.backgroundColor = 'orchid';
+                document.getElementById('color-name').innerHTML = 'лиловый';
+
+
+            } else if (div.style.backgroundColor == 'orchid') {
+                div.style.backgroundColor = 'darkseagreen';
+                document.getElementById('color-name').innerHTML = 'темный морской волны';
+
+            } else if (div.style.backgroundColor == 'darkseagreen') {
+                div.style.backgroundColor = 'coral';
+                document.getElementById('color-name').innerHTML = 'коралловый';
+
+
+            } else {
+                div.style.backgroundColor = 'plum';
+                div.style.color = 'black';
+                document.getElementById('color-name').innerHTML = 'сливовый';
+            }
+        }
+    </script>
+    <style>
+        .square {
+            width: 500px;
+            height: 200px;
+            margin: 20px;
+            text-align: center;
+            background-color: #DDA0DD;
+            border-radius: 10px;
+            font-size: 30px;
+            align-items: center;
+            position: relative;
+            left: 440px;
+            box-shadow: 0px 3px 10px #d7d7d7;
+            cursor: pointer;
+            }
+            div {
+                transition: background-color 0.5s;
+            }
+    </style>
+    <main>
+        <div class="color square" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">сливовый</span><br>
+    
+            Сделайте двойной щелчок, чтобы сменить.
+        </div>
+     
+    </main>
+    <footer>
+        &copy;Киценко Анастасия. ФБИ-21. 2 курс. 2024
+    </footer>
+</body>
+</html>
