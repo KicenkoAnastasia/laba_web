@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Group 11.png">
+    <title>Киценко Анастасия Валерьевна.Лабораторная 5</title>
+    <link rel="stylesheet" href="css3/main10.css">
+</head>
+<script>
+    let number;
+    let count = 0;
+
+    function startGame() {
+        number = Math.floor(Math.random() * 100) + 1;
+        let screens = document.getElementsByClassName('game');
+        screens[0].style.display = 'none';
+        screens[1].style.display = 'block';
+    }
+    function guess() {
+        count++;
+        let input = document.getElementById('user-number');
+        let userNumber = parseInt(input.value);
+        let message = document.getElementById('result');
+
+        // Проверка на пустое поле или не числовое значение
+        if (isNaN(userNumber) || userNumber < 1 || userNumber > 100) {
+            message.innerHTML = 'Пожалуйста, введите число от 1 до 100!';
+            return; // Прерываем выполнение функции, чтобы попытку не засчитывать
+        }
+        if (userNumber > number) {
+            message.innerHTML = 'Вы ввели слишком большое число';
+        } else if (userNumber < number) {
+            message.innerHTML = 'Вы ввели слишком маленькое число';
+        } else {
+            let screens = document.getElementsByClassName('game');
+            screens[1].style.display = 'none';
+            screens[2].style.display = 'block';
+            document.getElementById('number').innerHTML = number;
+            document.getElementById('try-count').innerHTML = count;
+        }
+    }
+    function again() {
+        // Скрыть третий экран, показать второй
+        document.getElementsByClassName('game')[2].style.display = 'none';
+        document.getElementsByClassName('game')[1].style.display = 'block';
+        // Загадать новое число
+        number = Math.floor(Math.random() * 100) + 1;
+        // Обнулить число попыток
+        count = 0;
+        // Очистить блок "result"
+        document.getElementById('result').innerHTML = '';
+        // Показать кнопку "Сыграть ещё раз"
+        document.getElementsByClassName('game')[0].style.display = 'block';
+        // Очистить поле ввода пользователя
+        document.getElementById('user-number').value = '';
+        if (isNaN(userNumber) || userNumber < 1 || userNumber > 100) {
+        document.getElementById('result').innerHTML = 'Число должно быть в диапазоне от 1 до 100!';
+        // Показать кнопку "Сыграть ещё раз"
+        document.getElementsByClassName('game')[0].style.display = 'block';
+        return; // Попытку не засчитывать
+    }
+    }
+    
+</script>
+<style>
+    header{
+        width: 100%;
+    }
+    .game{
+        background-color: #ffffffd8;
+        width: 500px;
+        height: 300px;
+        padding: 30px;
+        border-radius: 15px;
+        max-width: 500px;
+        margin: 20px;
+        font-size: 15px;
+        max-width: auto;
+        position: relative;
+        left: 450px;
+        font-size: 20px;
+        text-align: center;
+    }
+    body {
+            background-image: url("../img/Frame\ 4.png");
+            background-repeat: repeat; 
+            background-size: cover; 
+    }
+    .but{
+        background-color: rgb(0, 0, 0);
+        color: #ffffff;
+        padding: 5px;
+        width: 350px;
+        height: 50px;
+        font-size: 20px;
+        /* position: relative; */
+        /* left: 80px; */
+    }
+    input{
+        background-color: #ffffff;
+        color: #000000;
+        width: 300px;
+        height: 50px;
+        font-size: 20px;
+        margin: 20px;
+        text-align: center;
+        /* position: relative; */
+        /* left: 80px; */
+    }
+    
+</style>
+<body>
+    
+    <header>
+        НГТУ. ФБ. Лабораторная работа 5
+        <a href="../index.html"><span style="border: 2px solid #ffffff; background-color: #12121200; color: #ffffff;
+            padding: 5px;text-decoration: none;">Общее меню</span></a>
+        <a href="../lab6/lab6.html"><span style="border: 2px solid #ffffff; background-color: #12121200; color: #ffffff;
+            padding: 5px;text-decoration: none;">назад</span></a>
+    </header>
+    <main>
+        <div class="game" onclick="startGame()">
+            <button class="but">
+                Сыграть в игру
+            </button>
+        </div>
+
+        <div class="game" style="display: none;">
+            <h1>Угадай число!</h1>
+            <div>
+                Задумано число от 1 до 100. Угадайте, какое?<br>
+                <input type="number" value="" min="1" max="100" id="user-number"><br>
+                <button onclick="guess()" class="but">Угадать</button>
+                <div id="result"></div>
+            </div>
+        </div>
+
+        <div class="game" style="display: none;">
+            <h1>Поздравляем, вы выиграли!</h1>
+            <div>
+                Задуманное число: <span id="number"></span>
+            </div>
+            <div>
+                Количество попыток: <span id="try-count"></span>
+            </div>
+            <div>
+                <button onclick="again()" class="but">Сыграть ещё раз</button>
+            </div>
+        </div>
+        
+    </main>
+    <footer>
+        &copy;Киценко Анастасия. ФБИ-21. 2 курс. 2024
+    </footer>
+</body>
+</html>
