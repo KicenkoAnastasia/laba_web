@@ -1,17 +1,10 @@
 header{
-    background-color: #fefefe;color:#000000;
+    background-color: #131313;color:#ffffff;
     padding: 30px;
     font-size: 30px;
 
     a{
         text-decoration: none;
-        color: black;
-        border: 2px solid #00000000; 
-        padding: 5px;text-decoration: none;
-        transition: all 1s;
-    }
-    a:hover{
-        border: 2px solid #000000; 
     }
 }
 body{
@@ -21,8 +14,8 @@ body{
         margin-bottom: 250px;
     }
     footer{
-        background-color: #ffffff;
-        color: #000000;
+        background-color: #000000;
+        color:#ffffff;
         padding: 20px;
         font-size: 20px; 
         font-style: italic; 

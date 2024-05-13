@@ -10,7 +10,7 @@
 <body>
     
     <header onclick="showAutor()">
-        НГТУ | ФБ | Лабораторная работа №6 |
+        NSTU | ФБ | Лабораторная работа №6 |
         <a href="../index.html"><span>Общее меню</span></a>
         <a href="../lab6/lab6.html"><span>назад</span></a>
     </header>
@@ -64,8 +64,27 @@
             cursor: pointer;
             }
             div {
-                transition: background-color 0.5s;
+                transition: all 0.5s;
+                box-shadow: 0px 0px 15px rgba(0, 0, 0, 0);
+                position: relative;
+                top: 100px;
+
             }
+            div:hover{
+                box-shadow: 0px 0px 15px white;
+            }
+            body {
+            background-image: url("../img/fon7.png");
+            background-repeat: repeat; 
+            background-size: cover; 
+            }
+            @font-face {
+                font-family: "TT Norms Regular";
+                src: url("file:///C:/Users/Настюша/OneDrive/Documents/tt-norms-regular.otf") format('opentype');
+            }
+            body {
+                font-family: "TT Norms Regular", sans-serif;
+                }
     </style>
     <main>
         <div class="color square" ondblclick="changeColor(this)">

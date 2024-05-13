@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Group 11.png">
+    <title>Киценко Анастасия Валерьевна.Лабораторная №6</title>
+    <link rel="stylesheet" href="css3/main12.css">
+</head>
+<body style="background-image: url('../img/fon6.png');">
+    <header onclick="showAutor()">
+        NSTU | ФБ | Лабораторная работа №6 |
+        <a href="../index.html"><span>Общее меню</span></a>
+        <a href="../lab6/lab6.html"><span>назад</span></a>
+    </header>
+    <script>
+        function calculateTotal() {
+            let balance = document.getElementById('balance').value;
+            let total = 0;
+            let errorMessage = '';
+            let negativeCount = 0; // Счетчик отрицательных товаров
+            
+            const prices = [980, 930, 3269, 220, 2000, 240, 360];
+
+            if (balance < 0) {
+                errorMessage = 'Ошибка: баланс не может быть отрицательным.';
+            } else {
+                for (let i = 1; i <= 7; i++) {
+                    let quantity = document.getElementById('quantity' + i).value;
+
+                    if (quantity === '') {
+                        quantity = 0; // Принимаем пустые поля как нулевое количество
+                    } else {
+                        quantity = parseInt(quantity); // Преобразуем количество в целое число
+                    }
+
+                    if (quantity < 0) {
+                        errorMessage = 'Ошибка: количество товара не может быть отрицательным.';
+                        negativeCount++; // Увеличиваем счетчик отрицательных товаров
+                    }
+                    total += quantity * prices[i - 1];
+                }
+
+                if (negativeCount > 0 && negativeCount === total) {
+                    errorMessage = 'Ошибка: Выбрано одно или более отрицательных товаров.';
+                }
+
+                if (total === 0) {
+                    errorMessage = 'Выберите хотя бы один товар.';
+                }
+
+                if (total > balance) {
+                    errorMessage = `Ошибка: Сумма товаров (${total} рублей) превышает баланс (${balance} рублей).`;
+                }
+            }
+
+            if (errorMessage !== '') {
+                document.getElementById('result').innerText = errorMessage;
+            } else {
+                document.getElementById('result').innerText = `Сумма: ${total} рублей.`;
+            }
+        }
+        function clearForm() {
+            document.getElementById("balance").value = "";
+            for (let i = 1; i <= 7; i++) {
+                document.getElementById('quantity' + i).value = "";
+            }
+            document.getElementById('result').innerText = "";
+        }
+    </script>
+
+  <style>
+    body{
+        background-repeat: repeat; 
+        background-size: cover; 
+    }
+    div{
+        background-color: #ffffffb5;
+        border-radius: 10px;
+        text-align: center;
+        height: 600px;
+        width: 800px;
+        position: relative;
+        left: 350px;
+        top: 10px;
+    }
+    table {
+        margin: 20px auto 0; /* Center the table horizontally and add 20px margin from the top */
+    }
+
+    table, th, td {
+        border: 3px solid #171841;
+        border-collapse: collapse;
+        font-size: 25px;
+        color: #171841;
+        }
+    input{
+        background-color: #f9f9f906;
+        margin: 5px;
+        font-size: 20px;
+        border: solid 4px #17184100;
+        width: 100px;
+        }
+    button{
+        margin: 10px;
+        background-color: #171841;
+        color: white;
+        font-size: 20px;
+        border: solid 1px #171841;
+        }
+    p{
+        font-size: 25px;
+        font-weight: bold;
+        color: #171841;
+    }
+    
+  </style>
+    <main>
+        <div>
+            <p>Мой баланс: <input type="number" id="balance"></p>
+            
+            <table border="4" width="90%"> 
+                <tr>
+                    <td>№</td>
+                    <td>Название</td>
+                    <td>Цена</td>
+                    <td>Количество</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Маркеры для скетчей</td>
+                    <td>980 руб</td>
+                    <td><input type="number" id="quantity1"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Эпоксидная смола</td>
+                    <td>930 руб</td>
+                    <td><input type="number" id="quantity2"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Этюдный ящик для красок</td>
+                    <td>3269 руб</td>
+                    <td><input type="number" id="quantity3"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Грунтованная панель</td>
+                    <td>220 руб</td>
+                    <td><input type="number" id="quantity4"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Эпоксидная смола густая</td>
+                    <td>2000 руб</td>
+                    <td><input type="number" id="quantity5"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Бусины стеклянные</td>
+                    <td>240 руб</td>
+                    <td><input type="number" id="quantity6"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Донышко для вязания</td>
+                    <td>360 руб</td>
+                    <td><input type="number" id="quantity7"></td>
+                </tr>
+            </table>
+            
+            <button onclick="calculateTotal()">Рассчитать</button>
+            <button onclick="clearForm()">Очистить</button>
+            
+            <p id="result"></p>
+        </div>
+    </main>
+    <footer>
+        &copy;Киценко Анастасия. ФБИ-21. 2 курс. 2024
+    </footer>
+</body>
+</html>

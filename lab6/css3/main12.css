@@ -1,0 +1,80 @@
+header{
+    background-color: #F8F4F1;
+    color:#292929;
+    padding: 30px;
+    font-size: 30px;
+    box-shadow: 0px 5px 10px rgb(111, 118, 146) ;
+
+    a{
+        text-decoration: none;
+        color: #000000;
+        transition: all 0.5s;
+        font-size: 25px;
+        padding: 5px;
+        border: 2px solid transparent;
+    }
+    a:hover{
+        border-color: #000000;
+        transition: all 0.5s;
+        border-radius: 3px;
+    }
+}
+body{
+    background-color: #F8F4F1;
+    margin: 0px;
+    main{
+        margin-bottom: 250px;
+
+        a{
+            text-decoration: none ;
+            color: white;
+            font-size: 40px;
+            transition: all 2s;
+        }
+        a:hover{
+            color: #292929;
+        }
+        .d1{
+            background-color: #e2e2e286;
+            font-weight: bold;
+            width: 450px;
+            height: 160px;
+            padding: 60px;
+            text-align: justify;
+            border-radius: 7px;
+            position: relative;
+            left: 470px;
+            top: 160px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0);
+            transition: all 2s;
+        }
+        .d1:hover{
+            box-shadow: 0px 0px 15px white;
+        }
+        li{
+            font-size: 40px;
+            color: white;
+        }
+    }
+
+
+footer{
+    background-color: #F8F4F1;
+    color:#292929;
+    padding: 20px;
+    font-size: 20px; 
+    font-style: italic; 
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    width: 1460px;
+       
+}
+}
+@font-face {
+    font-family: "TT Norms Regular";
+    src: url("file:///C:/Users/Настюша/OneDrive/Documents/tt-norms-regular.otf") format('opentype');
+}
+body {
+    font-family: "TT Norms Regular", sans-serif;
+    }
