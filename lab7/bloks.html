@@ -60,6 +60,42 @@
                     main.appendChild(newBlock);
                 }
         }
+        function add10_80() {
+            let main = document.querySelector('main');
+            let diameter = 30; // диаметр
+            let spacing = 10; // расстояние между кругами
+            let width = 100; // ширина блока (круга)
+                for (let i = 10; i >= -80; i -= 3) {
+
+                    let newBlock = document.createElement('div');
+                    newBlock.style.width = `${diameter}px`;
+                    newBlock.style.height = `${diameter}px`;
+                    newBlock.style.borderRadius = '50%';
+                    newBlock.style.background = 'plum';
+                    newBlock.style.border = 'solid 1px mistyrose';
+                    newBlock.style.display = 'inline-block'; // круги  строчку
+                    newBlock.style.marginRight = `${spacing}px`; //расстояние между кругами
+                    newBlock.style.color = 'indigo';
+                    newBlock.style.marginTop ='60';
+                    newBlock.style.padding = '10';
+                    newBlock.style.alignContent = 'center';
+                    newBlock.textContent = i; //текст круга
+
+                    // Добавляем круг в контейнер main
+                    main.appendChild(newBlock);
+                }
+        }
+
+
+      
+
+        function clearMain() {
+            let main = document.querySelector('main');
+            let blocks = main.querySelectorAll('div'); // Находит div внутри main
+                for (let block of blocks) {
+                    block.remove(); // Удаляется каждый найденный блок
+                }
+        }
     </script>
 <style>
      body {
@@ -76,9 +112,14 @@
     <style>
     </style>
     <main>
-       <button onclick="addNewBlock()" class="but">Добавить блок</button>
-       <button onclick="addNewBlocks()" class="but">Добавить блоки</button>
-       <button onclick="add20_50()" class="but">Добавить блоки</button>
+        <button onclick="clearMain()" class="but" >очистить</button>
+        <button onclick="addNewBlock()" class="but">Добавить блок</button>
+        <button onclick="addNewBlocks()" class="but">Добавить блоки</button>
+        
+        <button onclick="add20_50()" class="but">20 =>50</button>
+        <button onclick="add10_80()" class="but" >10 => -80</button><br>
+
+      
     </main>
     <footer>
         &copy;Киценко Анастасия. ФБИ-21. 2 курс. 2024
