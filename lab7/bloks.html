@@ -85,7 +85,25 @@
                     main.appendChild(newBlock);
                 }
         }
+        function addOpacityBlocks() {
+        let main = document.querySelector('main');
+            for (let i = 1; i <= 10; i++) {
+                let newBlock = document.createElement('div');
+                newBlock.style.background = 'plum';
+                newBlock.style.height = '40px';
+                newBlock.style.border = 'solid 1px mistyrose';
+                newBlock.style.width = '100px'; // фиксированная ширина блока
+                newBlock.style.marginBottom = '10px';
+                newBlock.style.marginTop = '10px';
+                newBlock.style.color = 'indigo';
+                newBlock.textContent = i; // номер блока
 
+                // Вычисляем opacity для каждого блока
+                let opacityValue = i / 10;
+                newBlock.style.opacity = opacityValue;
+
+                main.appendChild(newBlock);
+            }}
 
       
 
@@ -115,7 +133,7 @@
         <button onclick="clearMain()" class="but" >очистить</button>
         <button onclick="addNewBlock()" class="but">Добавить блок</button>
         <button onclick="addNewBlocks()" class="but">Добавить блоки</button>
-        
+        <button onclick="addOpacityBlocks()" class="but">Полупрозрачные блоки</button>
         <button onclick="add20_50()" class="but">20 =>50</button>
         <button onclick="add10_80()" class="but" >10 => -80</button><br>
 
