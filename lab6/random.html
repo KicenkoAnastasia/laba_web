@@ -9,50 +9,47 @@
 </head>
 <script>
     let number;
-    let count = 0;
+    let count = 0; // переменные, для хранения  числа 
 
     function startGame() {
         number = Math.floor(Math.random() * 100) + 1;
         let screens = document.getElementsByClassName('game');
         screens[0].style.display = 'none';
-        screens[1].style.display = 'block';
+        screens[1].style.display = 'block';  //показывает 2й экран
     }
     function guess() {
-        count++;
-        let input = document.getElementById('user-number');
+        count++;//увеличение счетчика 
+        let input = document.getElementById('user-number'); 
         let userNumber = parseInt(input.value);
         let message = document.getElementById('result');
 
         // Проверка на пустое поле или не числовое значение
         if (isNaN(userNumber) || userNumber < 1 || userNumber > 100) {
             message.innerHTML = 'Пожалуйста, введите число от 1 до 100!';
-            return; // Прерываем выполнение функции, чтобы попытку не засчитывать
+            return; // Прерывается выполнение функции,попытка не засчитывается
         }
         if (userNumber > number) {
             message.innerHTML = 'Вы ввели слишком большое число';
         } else if (userNumber < number) {
             message.innerHTML = 'Вы ввели слишком маленькое число';
         } else {
-            let screens = document.getElementsByClassName('game');
-            screens[1].style.display = 'none';
-            screens[2].style.display = 'block';
-            document.getElementById('number').innerHTML = number;
-            document.getElementById('try-count').innerHTML = count;
+            let screens = document.getElementsByClassName('game'); //получает совокупность элементов
+            screens[1].style.display = 'none';// экран ввода чисел
+            screens[2].style.display = 'block'; //экран результата
+            document.getElementById('number').innerHTML = number; // загаданное число
+            document.getElementById('try-count').innerHTML = count; //кол-во попыток
         }
     }
     function again() {
-        // Скрыть третий экран, показать второй
-        document.getElementsByClassName('game')[2].style.display = 'none';
-        document.getElementsByClassName('game')[1].style.display = 'block';
+        document.getElementsByClassName('game')[2].style.display = 'none'; // третий экран
+        document.getElementsByClassName('game')[1].style.display = 'block';// третий экран
         // Загадать новое число
         number = Math.floor(Math.random() * 100) + 1;
-        // Обнулить число попыток
+        // попытки
         count = 0;
-        // Очистить блок "result"
         document.getElementById('result').innerHTML = '';
         // Показать кнопку "Сыграть ещё раз"
         document.getElementsByClassName('game')[0].style.display = 'block';
-        // Очистить поле ввода пользователя
         document.getElementById('user-number').value = '';
         if (isNaN(userNumber) || userNumber < 1 || userNumber > 100) {
         document.getElementById('result').innerHTML = 'Число должно быть в диапазоне от 1 до 100!';
@@ -61,15 +58,12 @@
         return; // Попытку не засчитывать
     }
     }
-
-
-
-
     function toggleRules() {
         let rulesBlock = document.getElementById('rules');
         let rulesButton = document.getElementById('rules-block').getElementsByTagName('button')[0];
-        if (rulesBlock.style.display === 'none') {
-            rulesBlock.style.display = 'block';
+       
+        if (rulesBlock.style.display === 'none') { 
+            rulesBlock.style.display = 'block'; 
             rulesButton.innerHTML = 'Скрыть правила игры';
         } else {
             rulesBlock.style.display = 'none';

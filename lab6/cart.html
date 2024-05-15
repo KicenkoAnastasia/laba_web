@@ -15,51 +15,48 @@
     </header>
     <script>
         function calculateTotal() {
-            let balance = document.getElementById('balance').value;
+            let balance = parseFloat(document.getElementById('balance').value); //parseFloat - значение-число
             let total = 0;
             let errorMessage = '';
-            let negativeCount = 0; // Счетчик отрицательных товаров
-            
             const prices = [980, 930, 3269, 220, 2000, 240, 360];
 
-            if (balance < 0) {
-                errorMessage = 'Ошибка: баланс не может быть отрицательным.';
+            if (isNaN(balance) || balance < 0) { //ошибка если баланс отрицательный || - или 
+                errorMessage = 'Ошибка: баланс не может быть отрицательным или пустым.';
             } else {
                 for (let i = 1; i <= 7; i++) {
-                    let quantity = document.getElementById('quantity' + i).value;
-
+                    let quantity = document.getElementById('quantity' + i).value; //i - текущий номер товара в цикле.
+                    // .value-получение значения элемента (количество выбранного товара)
                     if (quantity === '') {
-                        quantity = 0; // Принимаем пустые поля как нулевое количество
+                        quantity = 0; //проверка на поле ввода ( пустое = 0)
                     } else {
-                        quantity = parseInt(quantity); // Преобразуем количество в целое число
+                        quantity = parseInt(quantity); // преобразование в число
                     }
 
                     if (quantity < 0) {
                         errorMessage = 'Ошибка: количество товара не может быть отрицательным.';
-                        negativeCount++; // Увеличиваем счетчик отрицательных товаров
+                        break;//прерывание цикла
                     }
-                    total += quantity * prices[i - 1];
+
+                    total += quantity * prices[i - 1]; //prices[i - 1] индексация начинается с 0
+                    //total += quantity * prices[i - 1] эквивалентно total = total + quantity * prices[i - 1] 
                 }
 
-                if (negativeCount > 0 && negativeCount === total) {
-                    errorMessage = 'Ошибка: Выбрано одно или более отрицательных товаров.';
-                }
-
-                if (total === 0) {
+                if (total === 0 && errorMessage === '') { //  равна ли сумма 0 и нет ошибок  
                     errorMessage = 'Выберите хотя бы один товар.';
                 }
 
-                if (total > balance) {
+                if (total > balance && errorMessage === '') {
                     errorMessage = `Ошибка: Сумма товаров (${total} рублей) превышает баланс (${balance} рублей).`;
                 }
             }
 
-            if (errorMessage !== '') {
+            if (errorMessage !== '') { //если обнаружена ошибка - ошибка
                 document.getElementById('result').innerText = errorMessage;
             } else {
-                document.getElementById('result').innerText = `Сумма: ${total} рублей.`;
+                document.getElementById('result').innerText = `Сумма: ${total} рублей.`; //${total} переменная внутри строки
             }
         }
+
         function clearForm() {
             document.getElementById("balance").value = "";
             for (let i = 1; i <= 7; i++) {
@@ -128,7 +125,7 @@
                 </tr>
                 <tr>
                     <td>1</td>
-                    <td>Маркеры для скетчей</td>
+                    <td>Маркеры</td>
                     <td>980 руб</td>
                     <td><input type="number" id="quantity1"></td>
                 </tr>
