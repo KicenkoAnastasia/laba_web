@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Group 11.png">
+    <title>Киценко Анастасия Валерьевна.Лабораторная 6</title>
+    <link rel="stylesheet" href="csslab7/dollar.css">
+</head>
+<body>
+    <script>
+        function showStockPrices() {
+            const dates = [
+                '30.04.2024', '02.05.2024', '03.05.2024', '06.05.2024', '07.05.2024',
+                '08.05.2024', '10.05.2024', '13.05.2024', '14.05.2024', '15.05.2024'
+            ];
+            const prices = [
+                305.60, 303.00, 299.40, 302.00, 301.90,
+                302.10, 305.60, 303.50, 302.50, 303.20
+            ];
+            const table = document.getElementById('stock-table');
+            table.innerHTML = ''; // Clear the table before adding new rows
+
+            // Create table header
+            let header = table.createTHead();
+            let headerRow = header.insertRow(0);
+            let headers = ['Дата', 'Цена акций', 'Разница'];
+            for (let i = 0; i < headers.length; i++) {
+                let th = document.createElement('th');
+                th.innerText = headers[i];
+                headerRow.appendChild(th);
+            }
+
+            
+            let tbody = document.createElement('tbody');
+            table.appendChild(tbody);
+
+            for (let i = 0; i < dates.length; i++) {
+                let tr = document.createElement('tr');
+                let tdDate = document.createElement('td');
+                let tdPrice = document.createElement('td');
+                let tdDifference = document.createElement('td');
+
+                tdDate.innerText = dates[i];
+                tdPrice.innerText = prices[i];
+
+                if (i === 0) {
+                    tdDifference.innerText = '-';
+                } else {
+                    let difference = prices[i] - prices[i - 1];
+                    tdDifference.innerText = difference.toFixed(2);
+                }
+
+                tr.appendChild(tdDate);
+                tr.appendChild(tdPrice);
+                tr.appendChild(tdDifference);
+                tbody.appendChild(tr);
+            }
+
+            // Среднее значение, максимальное и минимальное значения стоимости акции
+            let sum = prices.reduce((a, b) => a + b, 0);
+            let average = (sum / prices.length).toFixed(2);
+            let maxPrice = Math.max(...prices).toFixed(2);
+            let minPrice = Math.min(...prices).toFixed(2);
+
+            document.getElementById('stock-detail').innerText = `
+                Среднее значение стоимости акции: ${average}\n
+                Максимальное значение стоимости акции: ${maxPrice}\n
+                Минимальное значение стоимости акции: ${minPrice}
+            `;
+
+            // Скрытие кнопки после нажатия
+            document.getElementById('stock-button').style.display = 'none';
+        }
+    </script>
+<style>
+     body {
+            background-image: url("../img/fon7lab.png");
+            background-repeat: repeat; 
+            background-size: cover; 
+        }
+       #knopka{
+        background-color: rgba(255, 255, 255, 0);
+        border: solid 1px white;
+        color: white;
+        padding: 20px;
+        font-size: 25px;
+        transition: all  1s;
+        box-shadow: 0px 0px 0px white;
+        position: relative;
+        left: 42%;
+       }
+       #knopka:hover{
+        box-shadow: 0px 0px 20px white;
+       }
+       
+       table, th, td {
+        border: 1px solid rgb(255, 255, 255);
+        font-size: 30px;
+        }
+        table{
+            position: relative;
+            left: 45%;
+            top: 50px;
+        }
+        #detail{
+            text-align: center;
+            font-size: 40px;
+            margin-top: 60px;
+        }
+        #stock-button {
+            background-color: rgba(255, 255, 255, 0);
+            padding: 20px;
+            font-size: 20px;
+            border: 1px solid white;
+            color: white;
+            box-shadow: 0px 0px 0px rgba(255, 255, 255, 0);
+            transition: box-shadow 3s; /* Плавный переход только для тени */
+            position: relative;
+            left: 40%;
+            font-family: "TT Norms Regular";
+            background: linear-gradient(to right, #FF6A01, #FF0566);
+            background-size: 200% auto; /* Увеличиваем размер фона для анимации переливания */
+        }
+
+        #stock-button:hover {
+            box-shadow: 0px 0px 10px #ffffff;
+            animation: gradientAnimation 3s infinite; /* Добавляем анимацию градиента */
+        }
+
+        /* анимация переливания градиента */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        #stock-table{
+            position: relative;
+            margin-top: 50px;
+            left: 30%;
+            color: white;
+        }
+        #stock-detail{
+            position: relative;
+            left: 30%;
+            margin-top: 70px;
+            color: white;
+            font-family: "TT Norms Regular";
+            font-size: 20px;
+        }
+</style>
+    <header>
+        NSTU | ФБ | Лабораторная работа №7 |
+        <a href="../index.html"><span >Общее меню</span></a>
+        <a href="../lab7/lab7.html"><span >назад</span></a>
+    </header>
+    <style>
+    </style>
+    <main>
+        <button onclick="showStockPrices()" id="stock-button">Курс акций Fix price</button>
+        <table border="1" id="stock-table"></table>
+        <div id="stock-detail"> </div>
+    </main>
+    <footer>
+        &copy;Киценко Анастасия. ФБИ-21. 2 курс. 2024
+    </footer>
+</body>
+</html>
