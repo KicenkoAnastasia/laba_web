@@ -22,23 +22,23 @@
             return response.json();
         })
         .then(function(data) {
-            // Получаем данные о курсе евро
+            //  данные о курсе евро
             const euroData = data.Valute.EUR;
 
-            // Выводим дату запроса
+            // дата запроса
             const currentDate = new Date(data.Date);
             const requestDate = currentDate.toLocaleDateString();
 
-            // Выводим текущий курс евро
+            // текущий курс евро
             const currentRate = euroData.Value.toFixed(2);
 
-            // Выводим курс за прошлую дату
+            // курс за прошлую дату
             const previousRate = euroData.Previous.toFixed(2);
 
-            // Рассчитываем разницу между текущим и предыдущим курсом
+            // разница между текущим и предыдущим курсом
             const difference = (euroData.Value - euroData.Previous).toFixed(2);
 
-            // Определяем сообщение о повышении или понижении курса
+            // сообщение о повышении или понижении курса
             let trendMessage;
             if (euroData.Value > euroData.Previous) {
                 trendMessage = '▲';
@@ -48,7 +48,7 @@
                 trendMessage = 'Курс остался неизменным';
             }
 
-            // Формируем сообщение для вывода на страницу
+            //  сообщение для вывода на страницу
             const message = `
                
                 <div class="vse">
@@ -79,8 +79,10 @@
                 </div>
             `;
 
-            // Выводим сообщение на страницу
+            // сообщение на страницу
             document.getElementById('euro-rate-info').innerHTML = message;
+
+            document.getElementById('get-rate-button').style.display = 'none';
         })
         .catch(function(error) {
             console.log('Ошибка при получении данных:', error);
@@ -99,11 +101,11 @@
             margin-bottom: 0x;
         }
         .container2 {
-            display: flex; /* Используем Flexbox для контейнера */
-            justify-content: space-around; /* Пространство вокруг элементов */
-            align-items: center; /* Выравнивание элементов по центру вертикально */
-            margin-left: 290px; /* Уменьшить отступы для сближения блоков */
-            margin-right: 290px; /* Уменьшить отступы для сближения блоков */
+            display: flex; 
+            justify-content: space-around; 
+            align-items: center; 
+            margin-left: 290px;
+            margin-right: 290px; 
             margin-bottom: 18px;
         }
 
@@ -164,9 +166,9 @@
         }
         
         .container1 {
-            display: flex; /* Используем Flexbox для контейнера */
-            justify-content: space-between; /* Пространство между элементами */
-            align-items: center; /* Выравнивание элементов по центру вертикально */
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
             margin-left: 295px;
             margin-right: 295px;
         }
@@ -239,7 +241,7 @@
     </style>
     <main>
         <div id="euro-rate-info"></div>
-        <button onclick="getEuroExchangeRate()">Получить курс евро</button>
+        <button id="get-rate-button" onclick="getEuroExchangeRate()">Получить курс евро</button>
 
     </main>
     <footer>
