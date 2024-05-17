@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Group 11.png">
+    <title>Киценко Анастасия Валерьевна.Лабораторная 6</title>
+    <link rel="stylesheet" href="csslab7/menu.css">
+</head>
+<body>
+    
+    <header>
+        NSTU | ФБ | Лабораторная работа №7 |
+        <a href="../index.html"><span >Общее меню</span></a>
+        <a href="../lab7/lab7.html"><span >назад</span></a>
+    </header>
+    <script>
+        function getEuroExchangeRate() {
+    const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+    fetch(url)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            // Получаем данные о курсе евро
+            const euroData = data.Valute.EUR;
+
+            // Выводим дату запроса
+            const currentDate = new Date(data.Date);
+            const requestDate = currentDate.toLocaleDateString();
+
+            // Выводим текущий курс евро
+            const currentRate = euroData.Value.toFixed(2);
+
+            // Выводим курс за прошлую дату
+            const previousRate = euroData.Previous.toFixed(2);
+
+            // Рассчитываем разницу между текущим и предыдущим курсом
+            const difference = (euroData.Value - euroData.Previous).toFixed(2);
+
+            // Определяем сообщение о повышении или понижении курса
+            let trendMessage;
+            if (euroData.Value > euroData.Previous) {
+                trendMessage = '▲';
+            } else if (euroData.Value < euroData.Previous) {
+                trendMessage = '▼';
+            } else {
+                trendMessage = 'Курс остался неизменным';
+            }
+
+            // Формируем сообщение для вывода на страницу
+            const message = `
+               
+                <div class="vse">
+                    <div class="container2">
+                        <div class="Tcurs"> 
+                            <div class="Tcurs1">Текущий курс евро:</div>
+                            <div class="Tcurs2">${currentRate} ${trendMessage}</div>
+                        </div>
+                        <div class="Pcurs">   
+                            <div class="Pcurs1">Курс за прошлую дату:</div>
+                            <div class="Pcurs2">${previousRate}</div>
+                        </div>
+                    </div>
+                    <div class="container1">
+                        <div class="data">    
+                            <div class="data1">Дата запроса:</div>
+                            <div class="data2">${requestDate}</div>
+                        </div>
+                        <div class="Istochnik">       
+                            <div class="Istochnik1">Источник данных:</div>
+                            <div class="Istochnik2"><a href="https://www.cbr-xml-daily.ru/">Курсы валют, API</a></div>
+                        </div>
+                        <div class="raz">
+                            <div class="raz1">Разница:</div>
+                            <div class="raz2">${difference}</div>
+                        </<div>
+                    </div>
+                </div>
+            `;
+
+            // Выводим сообщение на страницу
+            document.getElementById('euro-rate-info').innerHTML = message;
+        })
+        .catch(function(error) {
+            console.log('Ошибка при получении данных:', error);
+        });
+}
+    </script>
+    <style>
+        body {
+            background-image: url("../img/fon7lab.png");
+            background-repeat: repeat; 
+            background-size: cover; 
+        }
+        .vse{
+            margin-top: 200px;
+            margin-bottom: 0x;
+        }
+        .container2 {
+            display: flex; /* Используем Flexbox для контейнера */
+            justify-content: space-around; /* Пространство вокруг элементов */
+            align-items: center; /* Выравнивание элементов по центру вертикально */
+            margin-left: 290px; /* Уменьшить отступы для сближения блоков */
+            margin-right: 290px; /* Уменьшить отступы для сближения блоков */
+            margin-bottom: 18px;
+        }
+
+        .Tcurs, .Pcurs {
+            background-color: white;
+            border-radius: 7px;
+            width: 427px;
+            height: 230px;
+            transition: all 1s;
+            box-shadow: 0px 0px 0px rgba(255, 255, 255, 0);
+            cursor: pointer;
+        }
+        .Tcurs:hover, .Pcurs:hover{
+            box-shadow: 0px 0px 15px #ffffff;
+        }
+        .Tcurs1{
+            font-size: 30px;
+            text-align: center;
+            color: #4D4D4D;
+            padding-top: 20px;
+        }   
+        .Tcurs2{
+            font-size: 60px;
+            padding-top: 50px;
+            padding-bottom: 10px;
+            color: #989595;
+            text-align: center;
+            transition: all 1s;
+        }
+        .Tcurs2:hover{
+            color: #565656;
+        }
+        .Pcurs1{
+            font-size: 30px;
+            text-align: center;
+            color: #4D4D4D;
+            padding-top: 20px;
+        }
+        .Pcurs2{
+            font-size: 60px;
+            padding-top: 50px;
+            padding-bottom: 10px;
+            color: #989595;
+            text-align: center;
+            transition: all 1s;
+        }
+        .Pcurs2:hover{
+            color: #565656;
+        }
+        main{
+            margin-bottom: 0;
+                a{
+                    color: #FF0A61;
+                }
+                a:hover{
+                    color: #75052c;
+                }
+        }
+        
+        .container1 {
+            display: flex; /* Используем Flexbox для контейнера */
+            justify-content: space-between; /* Пространство между элементами */
+            align-items: center; /* Выравнивание элементов по центру вертикально */
+            margin-left: 295px;
+            margin-right: 295px;
+        }
+        .data, .Istochnik, .raz {
+            background-color: white;
+            border-radius: 7px;
+            width: 220px;
+            height: 60px;
+            padding: 30px;
+            text-align: center;
+            font-size: 20px;
+            transition: all 1s;
+            box-shadow: 0px 0px 0px rgba(255, 255, 255, 0);
+            cursor: pointer;
+        }
+        .data:hover, .Istochnik:hover, .raz:hover{
+            box-shadow: 0px 0px 15px #ffffff;
+        }
+
+        .data1{
+            color: #4D4D4D;
+            padding-bottom: 10px;
+        }
+        .data2{
+            color: #FF600B;
+            font-size: 25px;
+        }
+        .data2:hover{
+            color: #bb490c;
+        }
+
+        .Istochnik1{
+            color: #4D4D4D;
+            padding-bottom: 10px;
+        }
+        .Istochnik2{
+            color: #FF0A61;
+            font-size: 25px;
+        }
+        .raz1{
+            color: #4D4D4D;
+            padding-bottom: 10px;
+        }
+        .raz2{
+            color: #FF600B;
+            font-size: 25px;
+            transition: all 1s;
+        }
+        .raz2:hover{
+            color: #bb490c;
+        }
+        button{
+            background-color: #4d4d4d00;
+            color: white;
+            font-size: 40px;
+            border: solid 2px white;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 200px;
+            margin-left: 500px;
+            margin-right: 500px;
+            transition: all 1s;
+            box-shadow: 0px 0px 0px rgba(255, 255, 255, 0);
+        }
+        button:hover{
+            box-shadow: 0px 0px 15px #ffffff;
+            background-color: white;
+            color: #4D4D4D;
+        }
+    </style>
+    <main>
+        <div id="euro-rate-info"></div>
+        <button onclick="getEuroExchangeRate()">Получить курс евро</button>
+
+    </main>
+    <footer>
+        &copy;Киценко Анастасия. ФБИ-21. 2 курс. 2024
+    </footer>
+</body>
+</html>
