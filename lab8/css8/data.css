@@ -207,7 +207,7 @@ form {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px; /* изменено значение с 200px на 20px */
+    margin-bottom: 20px; 
     margin-top: 10px;
 }
 label {
