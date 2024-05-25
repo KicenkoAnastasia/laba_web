@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Group 11.png">
+    <title>Киценко Анастасия Валерьевна.Лабораторная 6</title>
+    <link rel="stylesheet" href="css8/get-days-count.css">
+    <script src="get-days-count.js"></script>
+</head>
+<body>
+    
+    <header>
+        NSTU | ФБ | Лабораторная работа №8 |
+        <a href="../index.html"><span >Общее меню</span></a>
+        <a href="../lab8/lab8.html"><span >назад</span></a>
+    </header>
+    <style>
+          .image {
+            width: 100%;
+            height: 500px; 
+            background-image: url('../img/texture-7515225_1920.jpg'); 
+            background-color: black;
+            background-size: cover;
+            background-position: center;
+            position: fixed; 
+            z-index: -1; 
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+<div class="image-container">
+    <div class="image"></div>
+    <div class="image-text">Число дней с даты рождения</div>
+</div>
+
+<main class="content">
+    <div class="menu2">
+        <div class="birthday">
+            <div class="br1">
+                    <input type="date" id="birthdate">
+                    <button id="reset-button" onclick="resetFields()" class="b1">Сбросить</button>
+            </div>
+            <button onclick="showDaysCount()" class="b2">Показать количество дней</button>
+            <div id="days-count"></div>
+        </div>
+    </div>
+</main>
+    <footer>
+        &copy;Киценко Анастасия. ФБИ-21. 2 курс. 2024
+    </footer>
+</body>
+</html>
