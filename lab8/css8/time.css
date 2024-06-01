@@ -116,7 +116,7 @@ body, html {
     width: 1em; 
     height: 1em; 
     background: rgb(255, 255, 255); 
-    border: 2px solid #d17272; 
+    border: 2px solid #c16363; 
     border-radius: 10em; 
     margin: auto; 
     z-index: 10; 
@@ -124,12 +124,12 @@ body, html {
 
 .hr { 
     height: 25%; 
-    background-color: #ffffff; 
+    background-color: #673b3b; 
 } 
 
 .min { 
     height: 30%; 
-    background-color: #ffffff; 
+    background-color: #673b3b;; 
 } 
 
 .sec { 

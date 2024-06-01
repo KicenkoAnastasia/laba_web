@@ -19,11 +19,11 @@
                 302.10, 305.60, 303.50, 302.50, 303.20
             ];
             const table = document.getElementById('stock-table');
-            table.innerHTML = ''; // Clear the table before adding new rows
+            table.innerHTML = ''; 
 
-            // Create table header
+           
             let header = table.createTHead();
-            let headerRow = header.insertRow(0);
+            let headerRow = header.insertRow(0);// строку в начало заголовка таблицы)
             let headers = ['Дата', 'Цена акций', 'Разница'];
             for (let i = 0; i < headers.length; i++) {
                 let th = document.createElement('th');
@@ -31,9 +31,9 @@
                 headerRow.appendChild(th);
             }
 
-            
+            //строки
             let tbody = document.createElement('tbody');
-            table.appendChild(tbody);
+            table.appendChild(tbody);//добавление в table
 
             for (let i = 0; i < dates.length; i++) {
                 let tr = document.createElement('tr');
@@ -58,7 +58,7 @@
             }
 
             // Среднее значение, максимальное и минимальное значения стоимости акции
-            let sum = prices.reduce((a, b) => a + b, 0);
+            let sum = prices.reduce((a, b) => a + b, 0); //сумма всех цен. начин. с нуля
             let average = (sum / prices.length).toFixed(2);
             let maxPrice = Math.max(...prices).toFixed(2);
             let minPrice = Math.min(...prices).toFixed(2);
@@ -69,7 +69,7 @@
                 Минимальное значение стоимости акции: ${minPrice}
             `;
 
-            // Скрытие кнопки после нажатия
+            // Скрытие кнопки
             document.getElementById('stock-button').style.display = 'none';
         }
     </script>

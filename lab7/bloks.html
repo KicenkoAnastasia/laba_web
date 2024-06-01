@@ -10,36 +10,34 @@
 <body>
     <script>
         function addNewBlock() {
-            let main = document.querySelector('main'); // ищет элемент <main> в документе и сохраняет его в переменной main
-            let width = 500; // начальная ширина блока
-            let newBlock = document.createElement('div'); //создание нового дива
+            let main = document.querySelector('main'); // ищет элемент <main> в документе 
+            let width = 500; 
+            let newBlock = document.createElement('div'); 
             newBlock.style.background = 'pink';
             newBlock.style.height = '40px';
             newBlock.style.border = 'solid 1px mistyrose';
-            newBlock.style.width = `${width}px`; // установка ширины блока
+            newBlock.style.width = `${width}px`;
             newBlock.style.marginBottom = '10px';
             newBlock.style.marginTop = '10px';
             newBlock.style.color = 'crimson';
-            main.appendChild(newBlock); //добавляет созданный блок в конце элемента
+            main.appendChild(newBlock); //в конец элемента
         }
 
 
         function addNewBlocks() {
-            let main = document.querySelector('main'); // ищет элемент <main> в документе и сохраняет его в переменной main
-            let width = 110; // начальная ширина блока
+            let main = document.querySelector('main'); 
+            let width = 110; 
             for (let i = 0; i < 10; i++) {
-                let newBlock = document.createElement('div'); //создание нового дива
+                let newBlock = document.createElement('div');
                 newBlock.style.background = 'pink';
                 newBlock.style.height = '40px';
                 newBlock.style.border = 'solid 1px mistyrose';
-                newBlock.style.width = `${width}px`; // установка ширины блока
+                newBlock.style.width = `${width}px`;
                 newBlock.style.marginBottom = '10px';
                 newBlock.style.marginTop = '10px';
                 newBlock.style.color = 'crimson';
                 newBlock.innerHTML = `Блок № ${i + 1}: 2*${i}<sup>2</sup>= ${2 * i ** 2}`;
-                main.appendChild(newBlock); //добавляет созданный блок в конце элемента
-                
-                // увеличение ширины для следующего блока
+                main.appendChild(newBlock);
                 width += 20; 
             }
         }
@@ -51,7 +49,7 @@
                     newBlock.style.background = 'plum';
                     newBlock.style.height = '40px';
                     newBlock.style.border = 'solid 1px mistyrose';
-                    newBlock.style.width = `${width}px`; // установка ширины блока
+                    newBlock.style.width = `${width}px`; 
                     newBlock.style.marginBottom = '10px';
                     newBlock.style.marginTop = '10px';
                     newBlock.style.color = 'indigo';
@@ -62,9 +60,9 @@
         }
         function add10_80() {
             let main = document.querySelector('main');
-            let diameter = 30; // диаметр
+            let diameter = 30;
             let spacing = 10; // расстояние между кругами
-            let width = 100; // ширина блока (круга)
+            let width = 100;
                 for (let i = 10; i >= -80; i -= 3) {
 
                     let newBlock = document.createElement('div');
@@ -73,15 +71,13 @@
                     newBlock.style.borderRadius = '50%';
                     newBlock.style.background = 'plum';
                     newBlock.style.border = 'solid 1px mistyrose';
-                    newBlock.style.display = 'inline-block'; // круги  строчку
-                    newBlock.style.marginRight = `${spacing}px`; //расстояние между кругами
+                    newBlock.style.display = 'inline-block'; 
+                    newBlock.style.marginRight = `${spacing}px`;
                     newBlock.style.color = 'indigo';
                     newBlock.style.marginTop ='60';
                     newBlock.style.padding = '10';
                     newBlock.style.alignContent = 'center';
-                    newBlock.textContent = i; //текст круга
-
-                    // Добавляем круг в контейнер main
+                    newBlock.textContent = i; 
                     main.appendChild(newBlock);
                 }
         }
@@ -92,13 +88,13 @@
                 newBlock.style.background = 'plum';
                 newBlock.style.height = '40px';
                 newBlock.style.border = 'solid 1px mistyrose';
-                newBlock.style.width = '100px'; // фиксированная ширина блока
+                newBlock.style.width = '100px'; 
                 newBlock.style.marginBottom = '10px';
                 newBlock.style.marginTop = '10px';
                 newBlock.style.color = 'indigo';
-                newBlock.textContent = i; // номер блока
+                newBlock.textContent = i; // номер
 
-                // Вычисляем opacity для каждого блока
+                //opacity для каждого блока
                 let opacityValue = i / 10;
                 newBlock.style.opacity = opacityValue;
 
@@ -108,7 +104,7 @@
             function createColoredCircles() {
                 let main = document.querySelector('main');
                 let circleCountInput = document.getElementById('circleCount');
-                let circleCount = parseInt(circleCountInput.value); // количество кругов из поля ввода
+                let circleCount = parseInt(circleCountInput.value); // количество кругов из ввода
                     for (let i = circleCount; i > 0; i--) {
                         let newCircle = document.createElement('div');
                         newCircle.classList.add('circle');
@@ -118,7 +114,7 @@
                         } else {
                             newCircle.style.backgroundColor = 'darksalmon';
                         }
-                        // текст в круге
+                        
                         newCircle.textContent = i;
                         main.appendChild(newCircle);
                     }
@@ -126,12 +122,12 @@
 
             function clearMain() {
             let main = document.querySelector('main');
-            let circleCountInput = document.getElementById('circleCount'); // Получаем поле ввода числа
-            let blocks = main.querySelectorAll('div'); // Находим div внутри main
+            let circleCountInput = document.getElementById('circleCount'); //  поле ввода числа
+            let blocks = main.querySelectorAll('div'); //div внутри main
                 for (let block of blocks) {
-                    block.remove(); // Удаляем каждый найденный блок
+                    block.remove(); //  найденный блок
                 }
-            circleCountInput.value = ''; // Очищаем поле ввода числа
+            circleCountInput.value = ''; //  поле ввода
         }
     </script>
 <style>

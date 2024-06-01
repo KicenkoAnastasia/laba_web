@@ -35,10 +35,10 @@
             // курс за прошлую дату
             const previousRate = euroData.Previous.toFixed(2);
 
-            // разница между текущим и предыдущим курсом
+            // разница 
             const difference = (euroData.Value - euroData.Previous).toFixed(2);
 
-            // сообщение о повышении или понижении курса
+        
             let trendMessage;
             if (euroData.Value > euroData.Previous) {
                 trendMessage = '▲';
@@ -48,7 +48,7 @@
                 trendMessage = 'Курс остался неизменным';
             }
 
-            //  сообщение для вывода на страницу
+            //  вывод на страницу
             const message = `
                
                 <div class="vse">

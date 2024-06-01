@@ -18,12 +18,12 @@
         async function getWeatherData() {
             const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
             try {
-                const response = await fetch(url);
-                const data = await response.json();
-                const temperatures = data.hourly.temperature_2m;
+                const response = await fetch(url); //запрос
+                const data = await response.json(); //в формат js 
+                const temperatures = data.hourly.temperature_2m; //извлеч.массива темп
                 const times = data.hourly.time;
 
-                const today = new Date().toISOString().split('T')[0];
+                const today = new Date().toISOString().split('T')[0];//YYYY-MM-DDTHH:MM:SS.sssZ
 
                 const temp8am = getTemperatureAtTime(today, '08:00', times, temperatures);
                 const temp12pm = getTemperatureAtTime(today, '12:00', times, temperatures);
@@ -36,9 +36,9 @@
                 console.error('Ошибка получения данных:', error);
             }
         }
-
+//получение температуры в определенный момент времени
         function getTemperatureAtTime(date, time, times, temperatures) {
-            const dateTime = `${date}T${time}`;
+            const dateTime = `${date}T${time}`; 
             const index = times.indexOf(dateTime);
             return index !== -1 ? temperatures[index] : 'Нет данных';
         }

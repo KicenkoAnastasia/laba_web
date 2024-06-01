@@ -27,8 +27,8 @@ function showTime(){
             `translate(-50%,-100%) rotate(${minrotation}deg)` 
         sec.style.transform = 
             `translate(-50%,-85%) rotate(${secrotation}deg)` 
-    });
-    }
+    },1000);
+}
 
 showTime(); // Вызываем функцию при загрузке страницы
 

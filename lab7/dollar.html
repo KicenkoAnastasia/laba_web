@@ -19,28 +19,26 @@
             for (let i = 0; i < exchange.length; i++) {
                 let tr = document.createElement('tr');
                 let td = document.createElement('td');
-
-                // Заполним ячейку курсом доллара, заполненную ячейку 
-                // вставим в строчку, а строчку — в таблицу:
+              
                 td.innerText = exchange[i];
-                tr.appendChild(td);
-                table.appendChild(tr);
+                tr.appendChild(td); //ячейка в строку
+                table.appendChild(tr);//строку в таблицу
                 td.style.color = 'white';
             }
 
             // Среднее значение
             let sum = 0;
-            for (let i = 0; i < exchange.length; i++) {
+            for (let i = 0; i < exchange.length; i++) {//сумма всех значенй из exchange
                 sum += exchange[i];
             }
-            let average = sum / exchange.length;
+            let average = sum / exchange.length; //среднее
             average = average.toFixed(2);
 
-            // Вывод среднего значения в блок detail
+           
             document.getElementById('detail').innerText = `Среднее значение: ${average}`;
             detail.style.color = 'white';
 
-            // Скрытие кнопки после нажатия
+            
             document.getElementById('knopka').style.display = 'none';
         }
     </script>

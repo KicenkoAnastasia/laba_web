@@ -69,10 +69,6 @@ function showDate() {
         document.getElementById('currentInfo').innerHTML = currentInfoString;
     });
 
-
-
-
-
     function getDayOfWeek() {
         var day = parseInt(document.getElementById("day").value);
         var month = parseInt(document.getElementById("month").value) - 1;

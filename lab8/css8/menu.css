@@ -36,7 +36,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow-x: hidden; /* чтобы изображение не выходило за пределы экрана по горизонтали */
+    overflow-x: hidden;
 }
 
 .header {
@@ -44,10 +44,10 @@ body, html {
     color: #fff;
     padding: 20px 0;
     text-align: center;
-    position: fixed; /* зафиксировать хедер наверху */
+    position: fixed; 
     top: 0;
     width: 100%;
-    z-index: 1000; /* чтобы хедер был поверх всего */
+    z-index: 1000; 
 }
 .menu2 {
     
@@ -85,17 +85,17 @@ body, html {
 
 .image-container {
     position: relative;
-    height: 480px; /* Высота контейнера с изображением */
-    overflow: hidden; /* Скрыть всё, что выходит за пределы контейнера */
+    height: 480px; 
+    overflow: hidden; 
 }
 
 .image-text {
     position: sticky;
-    top: 270px; /* Отступ от верхней части контейнера */
+    top: 270px; 
     width: 100%;
     text-align: center;
-    color: white; /* Цвет текста */
-    font-size: 60px; /* Размер текста */
+    color: white; 
+    font-size: 60px; 
     font-weight: bold;
 }
 
